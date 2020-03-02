@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+    Route::resources([
+        "create" => 'UserController@AddUser',
+        "update" => 'UserController@EditUser',
+        "delete" => 'UserController@DeleteUser'
+    ]);

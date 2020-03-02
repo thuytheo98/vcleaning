@@ -15,17 +15,17 @@
         <div class="item">
             <div class="title-input">Tên đăng nhập:</div>
             <div class="container-input">
-                <input type="text" class="input-custom" name="username" required>
+                <input type="text" placeholder="Username" class="input-custom" id="username" required>
             </div>
         </div>
         <div class="item">
             <div class="title-input">Mật khẩu:</div>
             <div class="container-input">
-                <input type="password" class="input-custom" name="password" required>
+                <input type="password" placeholder="password" class="input-custom" id="password" required>
             </div>
         </div>
         <div class="btn-login">
-            <button type="submit" name="login">Đăng nhập</button>
+            <button type="submit" name="login" onsubmit="validateForm()">Đăng nhập</button>
         </div>
     </form>
 </div>
@@ -59,7 +59,7 @@
         margin-left: 10px;
         font-weight: 600;
         text-align: center;
-        font-size: :26px;
+        font-size:26px;
     }
 
     .login .item{
@@ -69,7 +69,7 @@
         align-items: center;
     }
     .login.item .title-input{
-        font-size: :18px;
+        font-size :18px;
         color: #6B6C6F;
         font-weight: 500;
         width: 50%;
@@ -91,5 +91,19 @@
         cursor: pointer;
     }
 </style>
+<script !src="" type="text/javascript">
+    function validateForm() {
+        var txtusername = document.getElementById("username").value;
+        var txtpassword = document.getElementById("password").value;
+        if(txtusername==""){
+            alert("Please enter your username");
+        }else if(txtpassword==""){
+            alert("Please enter your password");
+        }else{
+            console.log(txtusername);
+            console.log(txtpassword);
+        }
+    }
+</script>
 </body>
 </html>
