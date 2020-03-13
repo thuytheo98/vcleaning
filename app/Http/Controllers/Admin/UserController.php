@@ -1,14 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
+use App\Model\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class UserController{
-    public function adduser(){
+class UserController extends Controller {
+    public $dirView = 'users.';
 
+    public function index(){
+        $users = User::all();
+        return view($this->dirView .'index');
+    }
+
+    public function create(UserRequest $request){
+
+    }
+
+    public  function show($id){
+        return "yassssss".$id;
     }
 }
