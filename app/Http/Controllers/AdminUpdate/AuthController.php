@@ -27,5 +27,9 @@ class AuthController extends Controller
         }
         return view($this->dirView . 'signin');
     }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('admin.login');
+    }
 
 }

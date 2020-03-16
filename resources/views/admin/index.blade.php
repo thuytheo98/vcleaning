@@ -1,7 +1,7 @@
-@extends('share.layout.master')
+@extends('admin.share.layout.master')
 
-@section('title', 'Title')
+@section('title', 'Admin')
+
 @section('content')
-oke t day nhas
+t o day nha
     @endsection
-

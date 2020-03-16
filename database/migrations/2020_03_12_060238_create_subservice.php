@@ -15,8 +15,8 @@ class CreateSubservice extends Migration
     {
         Schema::create('subservice', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->comment('ten dich vu di kem');
-            $table->string('description')->comment('mo ta ve dich vu kem theo')->nullable();
+            $table->string('name');
+            $table->string('description')->nullable();
             $table->double('price');
             $table ->softDeletes();
             $table->timestamps();
