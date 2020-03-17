@@ -2,48 +2,55 @@
 @section('title', 'Vcers - Add')
 
 @section('content')
-    <div class="add-vcer">
-        <h3>Thêm thông tin nhân viên vcer</h3>
+    <div class="edit-vcer">
+        <h3>Chỉnh sửa thông tin nhân viên vcer</h3>
         <div class="main">
             <form action="" method="POST">
                 @method('PUT')
                 @csrf
-                <div class="item">
-                    <div class=""><lable>Họ và tên</lable></div>
-                    <div><input type="text" name="name" value="{{$editVcer->name}}"></div>
-                </div>
-                <div class="item">
-                    <div class=""><lable>CMND</lable></div>
-                    <div><input type="text" name="cmnd" value="{{$editVcer ->identification}}"></div>
-                </div>
-                <div class="item">
-                    <div class=""><lable>Địa chỉ</lable></div>
-                    <div><input type="text" name="address" value="{{$editVcer ->address}}"></div>
-                </div>
-                <div class="item">
-                    <div class=""><lable>Số điện thoại</lable></div>
-                    <div><input type="text" name="phone" value="{{$editVcer ->phone}}"></div>
-                </div>
-                <div class="item">
-                    <div class=""><lable>Tuổi</lable></div>
-                    <div><input type="text" name="age" value="{{$editVcer ->age}}"></div>
-                </div>
-                <div class="item">
-                    <div class=""><lable>Ngày có thể làm được:</lable></div>
-                    <div><input type="text" name="date" value="{{$editVcer ->date}}"></div>
-                </div>
-                <div class="item">
-                    <div class=""><lable>Thời điểm có thể làm đk</lable></div>
-                    <div><input type="text" name="time" value="{{$editVcer ->time}}"></div>
-                </div>
-                <div class="item">
-                    <div class=""><lable>Tình trạng trước đây</lable></div>
-                    <div><input type="text" name="status" value="{{$editVcer ->status}}"></div>
-                </div>
-                <div class="image">
-                    <div class="upload-image">
-                        <div>Ảnh đại diện | Chọn ảnh</div>
+                <div class="input-text">
+                    <div class="item form-group">
+                        <div class="title-input">Họ và tên</div>
+                        <input type="text" name="name" class="custom-input form-control" value="{{$editVcer->name}}">
                     </div>
+                    <div class="item form-group">
+                        <div class="title-input">Căn cước công dân</div>
+                        <input type="text" name="cmnd" class="custom-input form-control" value="{{$editVcer->identification}}">
+                    </div>
+                    <div class="item form-group">
+                        <div class="title-input">Địa chỉ</div>
+                        <input type="text" name="address" class="custom-input form-control" value="{{$editVcer->address}}">
+                    </div>
+                    <div class="item form-group">
+                        <div class="title-input">Số điện thoại</div>
+                        <input type="text" name="phone" class="custom-input form-control" value="{{$editVcer->phone}}">
+                    </div>
+                    <div class="item form-group">
+                        <div class="title-input">Tuổi</div>
+                        <input type="text" name="age" class="custom-input form-control" value="{{$editVcer->age}}">
+                    </div>
+                    <div class="item form-group">
+                        <div class="title-input">Ngày có thể làm được</div>
+                        <input type="text" name="date" class="custom-input form-control" value="{{$editVcer->date}}">
+                    </div>
+                    <div class="item form-group">
+                        <div class="title-input">Thời điểm có thể làm</div>
+                        <input type="text" name="time" class="custom-input form-control" value="{{$editVcer->time}}">
+                    </div>
+                    <div class="item form-group">
+                        <div class="title-input">Tình trạng trước đây</div>
+                        <input type="text" name="status" class="custom-input form-control" value="{{$editVcer->status}}">
+                    </div>
+                    <div class="list-btn">
+                        <button type="reset" class="btn btn-dark">Return</button>
+                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                    </div>
+                </div>
+                <div class="input-image">
+                    <div class="title">
+                        Ảnh đại diện | Chọn ảnh
+                    </div>
+                    <div class="box-image"></div>
                     <input type="file" name="image" class="input-image">
                 </div>
             </form>

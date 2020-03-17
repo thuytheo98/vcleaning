@@ -2,24 +2,27 @@
 @section('title', 'Vcers')
 
 @section('content')
-    <?php $i =0;
+    <?php $i = 1;
     ?>
-    <div>
+    <div class="title-file">
+        <h3>Danh sách nhân viên Vcer</h3>
+    </div>
+    <div class="create-vcer">
         <a href="{{route('admin.vcers.create')}}">Create vcer</a>
     </div>
     <div class="list-vcer">
-        <table class="table table-dark table-hover" style="width: 70%;padding: 30px;">
+        <table class="table table-bordered table-hover" style="width: 70%;">
             <tr>
                 <th>Stt</th>
-                <th>Name</th>
-                <th>Identification</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Age</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th>oke</th>
+                <th>Họ và tên</th>
+                <th>Căn cước công dân</th>
+                <th>Địa chỉ</th>
+                <th>Số điện thoại</th>
+                <th>Tuổi</th>
+                <th>Ngày có thể làm</th>
+                <th>Thời điểm có thể làm</th>
+                <th>Tình trạng cvc</th>
+                <th>Chỉnh sửa</th>
             </tr>
             @foreach($listVcer as $vcer)
             <tr>

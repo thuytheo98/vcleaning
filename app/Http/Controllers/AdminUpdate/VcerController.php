@@ -19,6 +19,7 @@ class VcerController extends Controller
     }
     public function create(){
         return view($this->dirView . 'add');
+
     }
     public function store(VcerRequest $request){
         $validated = $request ->validated();
@@ -38,7 +39,7 @@ class VcerController extends Controller
         $editVcer = Vcers::find($id);
         return view($this-> dirView . 'edit',compact('editVcer'));
     }
-    public function update(Request $request){
+    public function update(VcerRequest $request){
 
     }
     public function destroy($id){
