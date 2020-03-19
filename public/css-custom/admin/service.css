@@ -1,0 +1,18 @@
+/*list service*/
+.service{
+    margin: 30px;
+    padding: 0;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+.add-service .title-input{
+    font-family: 'Baloo Chettan 2', cursive;
+}
+.add-service{
+    font-family: 'Baloo Chettan 2', cursive;
+}
+.list-service{
+    font-family: 'Baloo Chettan 2', cursive;
+}
+/*add service*/
+
+/*edit service*/

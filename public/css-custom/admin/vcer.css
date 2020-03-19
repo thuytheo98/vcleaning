@@ -75,12 +75,14 @@
     margin-bottom: 10px;
 }
 .add-vcer .main .input-image .box-image{
+    margin-bottom: 10px;
+}
+.add-vcer .main .input-image .box-image img{
     width: 200px;
     height: 200px;
     border: 1px solid #454543;
     background: #1b1e21;
     border-radius: 200px;
-    margin-bottom: 10px;
 }
 .add-vcer .main .input-image .input-image{
 }
