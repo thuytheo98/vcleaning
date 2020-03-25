@@ -6,22 +6,25 @@
     <div class="nav-right">
         <ul class="pull-right">
             <li>
-                <a href="">
-                    <i class="glyphicon glyphicon-envelope icon">Thông báo</i>
-                    <span class="badge"></span>
-                </a>
+                <a href="#">Thông báo<span class="badge">7</span></a>
             </li>
             <li>
-                <a href="">
+                <a href="#">
                     <i class="">Tin nhắn</i>
-                    <span class="badge"></span>
+                    <span class="badge">2</span>
                 </a>
             </li>
-            <li>
-                <a href="">
-                    <i class="">Trạng thái DN</i>
-                    <span class="badge"></span>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown">
+{{--                    <div class="employee-login">{{$data_user->username}}</div>--}}
+                    <div class="employee-login">Thuys</div>
                 </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+{{--                    <li class="emp-role">{{$role}}</li>--}}
+{{--                    <li class="emp-role">Admin</li>--}}
+                    <li class="dropdown-item"><a href="#">Profile</a></li>
+                    <li class="dropdown-item"><a href="{{route('admin.logout')}}">Logout</a></li>
+                </ul>
             </li>
         </ul>
     </div>

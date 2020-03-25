@@ -16,6 +16,7 @@ class VcerTableSeeder extends Seeder
             'identification' => '017369196',
             'address' =>'Hn',
             'phone' => '0395979590',
+            'images' => 'cap.jpg',
             'age' => '25',
             'date' => 'ca tuan',
             'time'=> 'sang',

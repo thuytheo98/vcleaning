@@ -2,7 +2,7 @@
 .login{
     background-color: #ECC74E;
     width: 400px;
-    height: 220px;
+    height: 250px;
     top: 0;
     left: 0;
     bottom: 0;
@@ -59,100 +59,6 @@
     border-radius: 6px;
     cursor: pointer;
 }
-.register{
-    width: 500px;
-    height: 600px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: goldenrod;
-    border-radius: 10px;
-    padding: 10px 15px;
-    border: 1px solid #6B6C6F;
-}
-/* REGISTER*/
-.register .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.register .logo span{
-    margin-top: 7px;
-    font-size: 24px;
-}
-.register .title{
-    text-align: center;
-    font-family: SansSerif;
-    font-size: 24px;
-    font-weight: 600;
-    opacity: 0.5%;
-}
-.register .item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-}
-.register .item .title-input{
-    font-size: 23px;
-    font-weight: 500;
-    width: 50%;
-}
-.register .item .input-custom{
-    width: 250px;
-    height: 30px;
-    border: 1px solid #6B6C6F;
-    border-radius: 10px;
-    padding: 5px;
-}
-.register .item .dmy{
-    width: 70px;
-    margin-right: 10px;
-    float: left;
-    display: flex;
-    justify-content: center;
-}
-.register .item .dmy:last-child{
-    margin-right: 0;
-}
-register .item .dmy .dmy-title{
-    font-size: 16px;
-    padding: 5px;
-    font-family: SansSerif;
-}
-.register .button-wrap{
-    display: flex;
-    justify-content:  flex-end;
-    align-items: baseline;
-}
-.register .btn{
-    box-sizing: border-box;
-    margin-top: 5px;
-    margin-right: 20px;
-    float: left;
-}
-.register button{
-    padding: 12px;
-    border-radius: 7px;
-    border: 1px solid #6B6C6F;
-    font-size: 16px;
-}
-.register .btn-return button:hover{
-    background-color: #ea704d;
-    color: black;
-    border: 1px solid #454543;
-    cursor: pointer;
-}
-.register .btn-register button:hover{
-    background-color: #ea704d;
-    color: black;
-    border: 1px solid #454543;
-    cursor: pointer;
-}
-
 /*admin*/
 
 html, div{
@@ -172,12 +78,6 @@ div{
 }
 button{
     cursor: pointer;
-    /*background-color: #ECC74E;*/
-    /*border: 1px solid #FBFBFD;*/
-    /*height: 40px;*/
-    /*border-radius: 7px;*/
-    /*font-size: 14px;*/
-    /*font-weight: 500;*/
 }
 button:hover{
     transform: scale(1.00);
@@ -190,6 +90,7 @@ a{
         flex-direction: column;
     }
 }
+/*header*/
 .navbar{
     padding-left: 20px;
     padding-right: 20px;
@@ -218,11 +119,15 @@ a{
     margin: 0;
     list-style: none;
 }
-.navbar .nav-right ul li{
+.navbar .nav-right .pull-right li{
     float: left;
-    padding: 15px 25px;
+    padding: 10px 25px;
 }
-.navbar .nav-right ul li a{
+.navbar .nav-right .pull-right li:hover{
+    background: #e4606d;
+    border-radius: 3px;
+}
+.navbar .nav-right .pull-right li a{
     text-decoration: none;
     color: #444248;
 }
@@ -288,66 +193,7 @@ a{
     padding: 10px 15px;
     line-height: 10px;
 }
-.login{
-    background-color: #ECC74E;
-    width: 400px;
-    height: 200px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    position: absolute;
-    border: 1px solid #6B6C6F;
-    border-radius: 10px;
-    padding: 10px 10px;
-    font-family: arial;
-}
-.login .title{
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
-    opacity: 1;
-}
-.login .logo-login{
-    display: flex;
-    justify-content: center;
-}
-.login .logo-login span{
-    margin-left: 10px;
-    font-weight: 600;
-    text-align: center;
-    font-size:26px;
-}
 
-.login .item{
-    margin-top: 15px;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-}
-.login.item .title-input{
-    font-size :18px;
-    color: #6B6C6F;
-    font-weight: 500;
-    width: 50%;
-}
-.login .item .container-input .input-custom{
-    border-radius: 4px;
-    width: 250px;
-    height: 37px;
-    border: 1px solid #6B6C6F;
-}
-.login .btn-login{
-    margin-top: 15px;
-    float: right;
-}
-.login .btn-login button{
-    border: 1px solid #6B6C6F;
-    height: 33px;
-    border-radius: 6px;
-    cursor: pointer;
-}
 .list-employee{
     width: 100%;
     margin: 10px;

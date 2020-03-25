@@ -12,32 +12,61 @@
 */
 
 Route::prefix('admin')->group(function (){
+
     Route::match(['get', 'post'], 'login', 'AdminUpdate\AuthController@login')->name('admin.login');
 
     Route::match(['get', 'post'], 'logout', 'AdminUpdate\AuthController@logout')->name('admin.logout');
 
-    Route::get('index',function (){
-        return view('admin.index');
-    })->name('admin.index');
-    Route::resource('services', 'AdminUpdate\ServiceController')->names([
-        'index' => 'admin.services.index',
-        'show' => 'admin.services.show',
-        'store' => 'admin.services.store', //add
-    ]);
-    Route::resource('employees', 'AdminUpdate\EmployeeController')->names([
-        'index' => 'admin.employees.index',
-        'show' => 'admin.employees.show',
-        'store' => 'admin.employees.store', //add
-    ]);
-    Route::resource('vcers', 'AdminUpdate\VcerController')->names([
-        'index' => 'admin.vcers.index',
-        'create' => 'admin.vcers.create',
-        'store' => 'admin.vcers.store', //add
-        'edit' => 'admin.vcers.edit',
-        'update' => 'admin.vcers.update',
-        'destroy' => 'admin.vcers.destroy',
-    ]);
+
+    Route::middleware(['admin.login'])->namespace('AdminUpdate')->group(function (){
+
+        Route::get('index', 'HomeController@index')->name('admin.index');
+
+        Route::resource('services', 'ServiceController')->names([
+            'index' => 'admin.services.index',
+            'create' => 'admin.services.create',
+            'store' => 'admin.services.store',
+        ]);
+        Route::resource('detail', 'DetailServiceController')->names([
+            'create' => 'admin.detail.create',
+            'store' => 'admin.detail.store',
+        ]);
+        Route::resource('subservice', 'SubServiceController')->names([
+            'create' => 'admin.subservice.create',
+            'store' => 'admin.subservice.store',
+        ]);
+        Route::resource('employees', 'EmployeeController')->names([
+            'index' => 'admin.employees.index',
+            'create' => 'admin.employees.create',
+            'store' => 'admin.employees.store',
+            'edit' => 'admin.employees.edit',
+            'update' => 'admin.employees.update',
+            'destroy' => 'admin.employees.destroy',
+        ]);
+        Route::resource('users', 'UserController')->names([
+            'index' => 'admin.users.index',
+        ]);
+        Route::resource('vcers', 'VcerController')->names([
+            'index' => 'admin.vcers.index',
+            'create' => 'admin.vcers.create',
+            'store' => 'admin.vcers.store',
+            'edit' => 'admin.vcers.edit',
+            'update' => 'admin.vcers.update',
+            'destroy' => 'admin.vcers.destroy',
+        ]);
+        Route::resource('orders', 'OrderController')->names([
+            'index' => 'admin.orders.index',
+            'show' => 'admin.orders.show',
+            'store' => 'admin.orders.store',
+        ]);
+    });
+    Route::prefix('ajax')->group(function (){
+        Route::get('detail/{idService}', 'AjaxController@getDetailService');
+    });
 });
+
+
+
 
 
 Route::match(['get', 'post'], 'login', 'Admin\AuthController@login')->name('login');

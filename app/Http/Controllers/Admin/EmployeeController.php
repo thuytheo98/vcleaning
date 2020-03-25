@@ -29,9 +29,6 @@ class EmployeeController extends Controller
     }
 
     public function store(Request $request){
-        $validate = $request->validate(
-            'name'
-        );
         $id = $request->emp_id;
         $up_emp = Employee::find($id);
         $up_emp->name = $request->name;

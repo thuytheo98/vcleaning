@@ -13,7 +13,7 @@ class VcerRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,10 +25,22 @@ class VcerRequest extends FormRequest
     {
         return [
             'name' => 'required|max:50',
-            'identification' => 'required|max:50',
+            'cmnd' => 'required|max:50',
             'address' => 'required|max:128',
             'phone' => 'required|max:10',
             'age' => 'required|max:128',
+            'images' => 'images|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'date' => 'required',
+            'time' => 'required',
+            'status' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required'=>'Bạn phải nhập tên đầy đủ',
+            'name.required'=>'Bạn phải nhập tên đầy đủ',
+            'name.required'=>'Bạn phải nhập tên đầy đủ',
         ];
     }
 }

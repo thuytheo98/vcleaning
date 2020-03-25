@@ -17,8 +17,6 @@ class CreateService extends Migration
             $table->bigIncrements('sv_id');
             $table->string('sv_name', 100);
             $table->string('description', 1000);
-            $table->integer('sub_id');
-            $table->integer('detail_sv_id');
             $table->timestamps();
             $table->softDeletes();
         });

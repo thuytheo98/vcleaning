@@ -18,6 +18,7 @@ class CreateDetailService extends Migration
             $table->string("amount_of_work")->comment('khoi luong cvc');
             $table->double('price');
             $table->string('note')->comment('chu thich');
+            $table->integer('sv_id');
             $table->timestamps();
         });
     }

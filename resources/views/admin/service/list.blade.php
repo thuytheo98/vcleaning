@@ -2,35 +2,17 @@
 @section('title', 'Services')
 
 @section('content')
-    <div class="list-service">
-        <div class="add-service">
-            <form action="{{route('admin.services.store')}}" method="POST">
-                @csrf
-            <h3>Thêm danh mục dịch vụ</h3>
-            <div>
-                <div>
-                    <div><lable>Ten danh muc</lable></div>
-                    <div><input type="text" name="sv_name"></div>
-                </div>
-                <div>
-                    <div><lable>Mo ta</lable></div>
-                    <div><textarea name="description" cols="30" rows="10"></textarea></div>
-                </div>
-                <div>
-                    <button type="submit">ADD</button>
-                </div>
-            </div>
-            </form>
-        </div>
-        <?php $i =0;
+    <div class="service">
+        <?php $i =1;
         ?>
+        <h3>Danh sánh nhóm dịch vụ</h3>
         <div class="list-service">
-            <table>
+            <table class="table table-striped table-bordered table-hover">
                 <tr>
                     <th>STT</th>
-                    <th>Ma dm</th>
-                    <th>Ten dm</th>
-                    <th>dm</th>
+                    <th>Tên nhóm dịch vụ</th>
+                    <th>Mô tả về dịch vụ</th>
+                    <th>Chỉnh sửa</th>
                 </tr>
                 @foreach($services as $service)
                 <tr>

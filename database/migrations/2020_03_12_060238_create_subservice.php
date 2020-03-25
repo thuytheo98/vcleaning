@@ -18,6 +18,8 @@ class CreateSubservice extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->double('price');
+            $table->integer('sv_id');
+            $table->integer('detail_sv_id');
             $table ->softDeletes();
             $table->timestamps();
         });

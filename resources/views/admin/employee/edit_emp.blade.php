@@ -1,63 +1,101 @@
 @extends('admin.share.layout.master')
 @section('content')
-    <button class="btn-return">
-        <a href="">Quay lại</a>
-    </button>
-    <div class="add-account">
-        <div class="action-bar">
-            <div class="float-left">
-                <div class="title">Thiết lập thông tin nhân viên</div>
-            </div>
-            <div class="form">
-                <form action="" method="post">
-                    <div class="item">
-                        <div class="title">Họ và tên</div>
-                        <input type="text" class="text-item" name="name" value="{{$edit->emp_name}}" required>
+    <div class="add-employee">
+        <div class="add-title">
+            <h3>Chỉnh sửa thông tin nhân viên</h3>
+        </div>
+        <div class="form" style="display: flex; flex-direction: row; justify-content: center;" >
+            <form action="{{route('admin.employees.update', $edit->id)}}" method="POST">
+                @method('PUT')
+                @csrf
+                <div class="create-info">
+                    <div class="add-title">Chỉnh sửa thông tin</div>
+                    <div class="image">
+                        <div class="input-image">
+                            <div class="title">
+                                Ảnh đại diện | Chọn ảnh
+                            </div>
+                            <div class="box-image">
+                                <img src="" alt="" id="output" class="image-file" style="width: 200px;  height: 200px; border-radius: 200px;">
+                            </div>
+                            <input type="file" name="image" class="open-image" id="image">
+                        </div>
                     </div>
-                    <div class="item">
-                        <div class="title">Quyền nhân viên</div>
-                        <input type="text" class="text-item" name="role" value="Nhân viên">
+                    <div class="information">
+                        <div class="item form-group">
+                            <div class="title">Họ và tên</div>
+                            <input type="text" class="text-item form-control" name="name" value="{{$edit->name}}" required>
+                        </div>
+                        <div class="item form-group">
+                            <div class="title">CMND</div>
+                            <input type="text" class="text-item form-control" name="cmnd" value="{{$edit->identification}}" required>
+                        </div>
+                        <div class="item form-group">
+                            <div class="title">Địa chỉ</div>
+                            <input type="text" class="text-item form-control" name="address" value="{{$edit->address}}" required>
+                        </div>
+                        <div class="item form-group">
+                            <span class="title">Số điện thoại</span>
+                            <input type="text" class="text-item form-control" name="phone" value="{{$edit->phone}}" required style="width: 30%;">
+                        </div>
+{{--                        <div>{{$edit->gender}}</div>--}}
+                        <div class="item form-group">
+                            <div class="title">Giới tính</div>
+                            <div class="gender">
+                                <label class="radio-inline" style="margin-right: 20px;">
+                                    <input type="radio" name="gender" value="0" {{ ($edit->gender == "0")? "checked" : "" }} style="cursor:pointer; width: 30px;"><span class="title">Nam</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" value="1" {{ ($edit->gender=="1")? "checked" : "" }} style="cursor:pointer; width: 30px;"><span class="title">Nữ</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <span class="title">Ngày sinh</span>
+                            <input type="date" class="text-item form-control" name="birth" value="{{$edit->birthday}}" style="width: 50%;" required>
+                        </div>
+                        <div class="item form-group">
+                            <div class="title">Email</div>
+                            <input type="text" class="text-item form-control" name="email" value="{{$edit->email}}" required>
+                        </div>
                     </div>
-                    <div class="item">
-                        <div class="title">Email</div>
-                        <input type="email" class="text-item" name="email" value="{{$edit->emp_email}}" required>
+                </div>
+                <div class="create-account">
+                    <div class="add-title">Sửa tài khoản cho nhân viên</div>
+                    <div class="item form-group">
+                        <div class="title">Username</div>
+                        <input type="text" class="text-item form-control" name="username" value="{{$edit->username}}" required>
                     </div>
-                    <div class="item">
-                        <div class="title">Số điện thoại</div>
-                        <input type="number" class="text-item" name="phone" value="{{$edit->emp_phone}}" required>
+                    <div class="item form-group">
+                        <div class="title">Password</div>
+                        <input type="password" class="text-item form-control" name="password" value="{{$edit->password}}" required>
                     </div>
-                    <div class="item">
-                        <div class="title">Ngày sinh</div>
-                        <input type="date" class="text-item" name="birth" value="{{$edit->emp_birthday}}" required>
+                    <div class="item form-group">
+                        <div class="title">Nhập lại password</div>
+                        <input type="password" class="text-item form-control" name="re-password" value="">
                     </div>
-                    <div class="item">
-                        <div class="title">Giới tính</div>
-                        <input type="text" class="text-item" name="gender" value="{{$edit->emp_gender}}" required>
+                    <div class="item form-group">
+                        <div class="title">Chọn quyền đăng nhập</div>
+                        <select name="role" id="" class="form-control">
+                            <option value="1" {{ ($edit->role=="1")? "selected" : "" }}>Quản lý</option>
+                            <option value="2" {{ ($edit->role=="2")? "selected" : "" }}>Nhân viên</option>
+                        </select>
                     </div>
-                    <div class="item">
-                        <div class="title">Địa chỉ</div>
-                        <input type="text" class="text-item" name="address" value="{{$edit->emp_address}}" required>
+                </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <div class="item">
-                        <div class="title">Thẻ căn cước</div>
-                        <input type="number" class="text-item" name="identification" value="{{$edit->emp_identification}}" required>
-                    </div>
-                    <div class="item">
-                        <div class="title">Mã nhân viên</div>
-                        <input type="number" class="text-item" name="emp_id" value="{{$edit->emp_id}}" placeholder="Mã nhân viên tự sinh" disabled>
-                    </div>
-                    <div class="image-emp">
-                        <img src="" alt="">
-                        <input type="file" name="image">
-                    </div>
-                    <div class="btn-create">
-                        <button type="submit" name="update">Cập nhật thông tin</button>
-                    </div>
-                    <div class="btn-delete">
-                        <button type="submit" name="delete">Xóa nhân viên</button>
-                    </div>
-                </form>
-            </div>
+                @endif
+                <div class="list-btn">
+                    <button type="submit" name="_method" value="delete" class="btn btn-dark">Xóa</button>
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                </div>
+            </form>
         </div>
     </div>
     @endsection

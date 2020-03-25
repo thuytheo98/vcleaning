@@ -19,6 +19,7 @@ class CreateVcer extends Migration
             $table->string('identification', 50);
             $table->string('address',128);
             $table->string('phone',10);
+            $table->string('images',255)->nullable();
             $table->integer('age');
             $table->string('date')->comment("ngay lam")->nullable();
             $table->string('time')->comment("thoi diem co the lam")->nullable();

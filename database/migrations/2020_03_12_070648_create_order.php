@@ -24,6 +24,7 @@ class CreateOrder extends Migration
             $table->double('total')->nullable();
             $table->integer('status');
             $table->integer('user_id');
+            $table->integer('sv_id');
             $table->integer('emp_id');
             $table->integer('vcer_id');
             $table->timestamps();

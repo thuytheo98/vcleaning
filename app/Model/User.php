@@ -13,6 +13,6 @@ class User extends Authenticatable
     use Notifiable;
     public $table = 'users';
     public $primaryKey = 'id';
-    public $fillable = ['name', 'password', 'email', 'remember_token'];
+    public $fillable = ['name', 'password', 'email', 'phone', 'remember_token'];
     public $timestamps = true;
 }

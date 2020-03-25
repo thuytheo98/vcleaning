@@ -1,35 +1,38 @@
 @extends('admin.share.layout.master')
 @section('content')
-    <div class="list-employee">
-        <div class="title-list">
-            <div class="float-left">
-                <div class="title">Danh sách nhân viên</div>
-            </div>
-            <div class="float-right">
-                <a href="{{route('emp.employee.create')}}">Thêm nhân viên</a>
-            </div>
+    <div class="list-emp">
+        <div class="title-file">
+            <h3 style="margin-top: 20px;">Danh sách nhân viên</h3>
         </div>
-        <table class="table table-striped" style="width: 70%">
+        <table class="table table-striped table-bordered table-hover" style="margin: 0 20px; width: 90%">
             <tr>
                 <th>STT</th>
                 <th>Họ Tên</th>
                 <th>Địa chỉ</th>
-                <th>Tuổi</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Email</th>
                 <th>Số điện thoại</th>
                 <th>Căn cước công dân</th>
-                <th>Hành động</th>
+                <th>Username</th>
+                <th>Quyền cho phép</th>
+                <th>Chỉnh sửa</th>
             </tr>
             <?php $i = 0; ?>
-            @foreach($listemp as $emp)
+            @foreach($list_emp as $emp)
             <tr>
                 <td>{{$i++}}</td>
                 <td>{{$emp->name}}</td>
                 <td>{{$emp->address}}</td>
-                <td>{{$emp->age}}</td>
+                <td>{{$emp->birthday}}</td>
+                <td>{{($emp->gender =="1")? "Nữ" : "Nam"}} </td>
+                <td>{{$emp->email}}</td>
                 <td>{{$emp->phone}}</td>
                 <td>{{$emp->identification}}</td>
+                <td>{{$emp->username}}</td>
+                <td>{{($emp->role =="1")? "Quản lý" : "Nhân viên"}}</td>
                 <td class="edit">
-                    <a href="employee\{{$emp->id}}\edit"><i class="fa fa-edit">Edit</i></a>
+                    <a href="{{route('admin.employees.edit', $emp->id)}}">Edit</a>
                 </td>
             </tr>
             @endforeach
