@@ -1,42 +1,22 @@
 @extends('share.layout.master')
 @section('content')
-{{--    <div>--}}
-{{--        <form action="{{route('login')}}" method="POST">--}}
-{{--            @csrf--}}
-{{--            <div>--}}
-{{--                <lable>Username</lable><input type="text" name="name">--}}
-{{--            </div>--}}
-{{--            <div>--}}
-{{--                <lable>Password</lable><input type="password" name="password">--}}
-{{--            </div>--}}
-{{--            <div>--}}
-{{--                <button type="submit">Login</button>--}}
-{{--            </div>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-    <div class="login">
-        <div class="logo-login">
-            <img src="../../image/logolev.png" alt="">
-            <span>Vcleaning</span>
-        </div>
-        <div class="title">Chào mừng đến với hệ thống quản trị</div>
+    <div class="row">
         <form action="{{route('login')}}" method="POST">
             @csrf
-            <div class="item">
-                <div class="title-input">Tên đăng nhập:</div>
-                <div class="container-input">
-                    <input type="text" class="input-custom" name="name" required>
-                </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">{{__("messages.LoginPage.username")}}</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="Enter username" name="username">
             </div>
-            <div class="item">
-                <div class="title-input">Mật khẩu:</div>
-                <div class="container-input">
-                    <input type="password" class="input-custom" name="password" required>
-                </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.LoginPage.password')}}</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
             </div>
-            <div class="btn-login">
-                <button type="submit">Đăng nhập</button>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
             </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
     @if ($errors->any())

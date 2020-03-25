@@ -1,35 +1,39 @@
 <header>
-    <div class="right-header">
-        <ul class="menu">
-            <!--            <li class="logo">-->
-            <!--                <a href=""><img src="http://localhost:8080/mywebsite/client/image/images.jpg" property="Vcleaning"></a>-->
-            <!--            </li>-->
-            <li class="list-menu-item">
-                <a href="">Trang chủ</a>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">Vcleaning</a>
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item" style="margin: 0 20px;">
+                <a class="nav-link" href="#">Trang chủ</a>
             </li>
-            <li class="list-menu-item">
-                <a href="">Giới thiệu</a>
+            <li class="nav-item" style="margin: 0 20px;">
+                <a class="nav-link" href="#">Giới thiệu</a>
             </li>
-            <li class="list-menu-item">
-                <a href="">Dịch vụ</a>
+            <li class="nav-item" style="margin: 0 20px;">
+                <a class="nav-link" href="#">Dịch vụ</a>
             </li>
-            <li class="list-menu-item">
-                <a href="">Tin tức-Blog</a>
+{{--            <li class="nav-item" style="margin: 0 20px;">--}}
+{{--                <a class="nav-link" href="#">Tin tức-Blog</a>--}}
+{{--            </li>--}}
+            <li class="nav-item active" style="margin: 0 20px;">
+                <a class="nav-link" href="#">Tuyển Dụng</a>
             </li>
-            <li class="list-menu-item">
-                <a href="">Tuyển Dụng</a>
+            <li class="nav-item" style="margin: 0 20px;">
+                <a class="nav-link" href="#">Liên Hệ</a>
             </li>
-            <li class="list-menu-item">
-                <a href="">Liên Hệ</a>
+            <li class="nav-item" style="margin: 0 20px;">
+                <a class="nav-link" href="#">Đăng nhập</a>
+            </li>
+
+            <li class="nav-item dropdown" style="margin: 0 20px;">
+                <a href="#" class="nav-link" data-toggle="dropdown">Language</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="#">English</a></li>
+                    <li class="dropdown-item"><a href="">Tiếng Việt</a></li>
+                </ul>
             </li>
         </ul>
-    </div>
-    <div class="left-header">
-        <ul>
-            <li><a href="">Login</a></li>
-            <li class="ngaongo"><a href=""></a>Tin nhan</li>
-            <li><a href="">Thong bao</a></li>
-        </ul>
-    </div>
+    </nav>
 </header>
 

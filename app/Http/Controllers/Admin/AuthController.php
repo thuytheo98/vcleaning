@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,18 +16,18 @@ class AuthController extends Controller
     public $dirView = 'auth.';
 
     public function login(Request $request){
-
+        App::setLocale('vi');
         if(Auth::check()){
             return redirect()->route('usr.users.index');
         }
         if($request->isMethod('post')){
-            $validate = $request->validate([
-                'name' => 'required|max:50',
+            $request->validate([
+                'username' => 'required|max:50',
                 'password' => 'required|max:64'
             ]);
             $dataLogin = [
-                'name' => $validate['name'],
-                'password' => $validate['password']
+                'name' => $request['username'],
+                'password' => $request['password']
             ];
             $auth = Auth::attempt($dataLogin, false);
             if (!$auth) {

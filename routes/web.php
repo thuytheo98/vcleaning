@@ -72,13 +72,14 @@ Route::prefix('admin')->group(function (){
 Route::match(['get', 'post'], 'login', 'Admin\AuthController@login')->name('login');
 
 Route::match(['get', 'post'], 'logout', 'Admin\AuthController@logout')->name('logout');
-////    ->prefix('thuy')
+
 Route::middleware(['user.login'])->group(function (){
 
     Route::resource('users', 'Admin\UserController')->names([
         'index' => 'usr.users.index',
         'create' => 'usr.users.create'
     ]);
+    //chon service se nhary ra form dang ky service va cac buoc xac nhan den khi thanh toan
     Route::resource('services', 'Admin\ServiceController')->names([
         'index' => 'usr.service.index',
         'create' => 'usr.service.create'
