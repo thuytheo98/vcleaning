@@ -17,7 +17,6 @@ Route::prefix('admin')->group(function (){
 
     Route::match(['get', 'post'], 'logout', 'AdminUpdate\AuthController@logout')->name('admin.logout');
 
-
     Route::middleware(['admin.login'])->namespace('AdminUpdate')->group(function (){
 
         Route::get('index', 'HomeController@index')->name('admin.index');

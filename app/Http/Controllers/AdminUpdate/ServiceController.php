@@ -7,6 +7,7 @@ namespace App\Http\Controllers\AdminUpdate;
 use App\Http\Controllers\Controller;
 use App\Model\Detail_service;
 use App\Model\Service;
+use App\Model\Subservice;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -17,20 +18,32 @@ class ServiceController extends Controller
         return view($this->dirView . 'list',compact('services'));
     }
     public function create(){
-        return view($this->dirView . 'add');
+        return view($this->dirView . 'add_new');
     }
     public function store(Request $request){
         //validate
+//        $request->validate([
+//            'sv_name' => 'required|max:100',
+//            'description' => 'nullable',
+//            'aow' => 'required',
+//            'price' => 'numeric',
+//            'note' => 'nullable',
+//            'sub_name' => 'nullable',
+//            'sub_price' =>'nullable|numeric',
+//            'sub_description' => 'nullable'
+//        ]);
         $sv = new Service();
         $newDetail = new Detail_service();
+        $newSub = new Subservice();
         $sv->sv_name = $request->sv_name;
         $sv->description = $request->description;
         $sv->save();
-//        $newDetail->amount_of_work = $request->aow;
-//        $newDetail->price = $request->price;
-//        $newDetail->note = $request->note;
-//        $newDetail->sv_id = $sv->id;
-//        $newDetail->save();
-        return redirect()->route('admin.detail.create');
+        $sv_find_id = Service::where('sv_name', $request->sv_name)->get();
+        dd($sv_find_id);
+        $newDetail->amount_of_work = $request->aow;
+        $newDetail->price = $request->price;
+        $newDetail->note = $request->note;
+        $newDetail->save();
+        return redirect()->route('admin.services.create');
     }
 }

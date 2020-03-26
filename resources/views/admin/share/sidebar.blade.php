@@ -38,8 +38,8 @@
                 </a>
                 <ul id="menu-service" class="collapse">
                     <li><a href="{{route('admin.services.index')}}">Danh sách Dịch Vụ</a></li>
-                    <li><a href="{{route('admin.services.create')}}">Thêm dịch vụ</a></li>
-                    <li><a href="{{route('admin.detail.create')}}">Thêm chi tiết dịch vụ</a></li>
+                    <li><a href="{{route('admin.services.create')}}">Thêm mới dịch vụ</a></li>
+                    <li><a href="{{route('admin.detail.create')}}">Thêm chi tiết dịch vụ đã có</a></li>
                     <li><a href="{{route('admin.subservice.create')}}">Thêm dịch vụ kèm theo</a></li>
                 </ul>
             </li>

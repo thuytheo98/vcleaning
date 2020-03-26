@@ -1,7 +1,7 @@
 <?php
 return [
     'LoginPage'=>[
-        'username'=>'Tên đăng nhập',
+        'email'=>'Email/Số điện thoại',
         'password'=>'Mật khẩu'
     ],
     'Index'=>[

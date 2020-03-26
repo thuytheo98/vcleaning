@@ -2,7 +2,19 @@ html, header{
     font-size: 14px;
     font-family: 'Baloo Chettan 2', cursive;
 }
+/*header*/
 .navbar{
     font-size: 18px;
     font-family: 'Baloo Chettan 2', cursive;
 }
+
+/*footer*/
+.footer{
+    font-family: 'Baloo Chettan 2', cursive;
+    background: white;
+    font-size: 18px;
+}
+.logo h3{
+    font-size: 23px;
+}
+

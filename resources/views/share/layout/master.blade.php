@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
-    @include('share.layout.header')
+@include('share.layout.header')
     <div class="container">
          @yield('content')
     </div>
+@include('share.layout.footer')
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

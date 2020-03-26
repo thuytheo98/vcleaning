@@ -40,7 +40,7 @@
                     <textarea name="description" cols="70" rows="12"></textarea>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">ADD</button>
+                    <button type="submit" class="btn btn-primary btn-lg">ADD</button>
                 </div>
             </div>
         </form>

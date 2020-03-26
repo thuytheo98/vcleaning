@@ -18,7 +18,7 @@ class DetailServiceController extends Controller
 //    }
     public function create(){
         $sv = Service::all();
-        return view($this->dirView . 'add',compact('sv'));
+        return view($this->dirView . 'add-detail',compact('sv'));
     }
     public function store(Request $request){
         //validate

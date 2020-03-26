@@ -22,7 +22,7 @@ class AuthController extends Controller
         }
         if($request->isMethod('post')){
             $request->validate([
-                'username' => 'required|max:50',
+                'email' => 'required|max:50',
                 'password' => 'required|max:64'
             ]);
             $dataLogin = [
@@ -30,7 +30,7 @@ class AuthController extends Controller
                 'password' => $request['password']
             ];
             $auth = Auth::attempt($dataLogin, false);
-            if (!$auth) {
+            if (!$auth){
                 return back()->withInput()->withErrors("login fail");
             }
             return redirect()->route('usr.users.index');

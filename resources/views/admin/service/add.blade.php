@@ -2,137 +2,93 @@
 @section('title', 'Services')
 
 @section('content')
-        <div class="add-service">
-{{--            <form action="{{route('admin.services.store')}}" method="POST">--}}
-{{--                @csrf--}}
-                <h3>Thêm danh mục dịch vụ</h3>
+    <div class="add-service">
 
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#home">Thêm dịch vụ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu1">Thêm chi tiết dịch vụ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu2">Thêm dịch vụ kèm theo</a>
-                    </li>
-                </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div id="home" class="container tab-pane active"><br>
-                        <form action="{{route('admin.services.store')}}" method="POST">
-                                @csrf
-                            <div class="item form-group">
-                                <p class="title-input">Tên dịch vụ</p>
-                                <input type="text" name="sv_name" class="form-control" style="width: 30%">
+        <h2 class="add-title">Thêm mới dịch vụ</h2>
+
+        <form action="{{route('admin.services.store')}}" method="POST">
+            @csrf
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active_service active" data-toggle="tab" href="#service" id="add_service" style="border: 1px solid #ccc;">Thêm dịch vụ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link inactive_service" href="" id="add_detail_service" style="border: 1px solid #ccc;">Thêm chi tiết dịch vụ</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="service" class="tab-pane active"><br>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Service</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label>Tên dịch vụ</label>
+                                <input type="text" id="sv_name" name="sv_name" class="form-control" style="width: 30%">
+                                <span id="error_sv_name" class="text-danger"></span>
                             </div>
-                            <div class="item form-group">
-                                <p class="title-input">Mô tả về dịch vụ</p>
+                            <div class="form-group">
+                                <label>Mô tả về dịch vụ</label>
                                 <textarea name="description" cols="50" rows="8"></textarea>
+                                <span id="error_sv_name" class="text-danger"></span>
                             </div>
                             <div>
-                                <button type="submit"  class="btn btn-primary">Quay lại</button>
-                                <button type="submit" class="btn btn-primary">Thêm</button>
+                                <button type="button" class="btn btn-primary btn-lg" name="btn_add_service" id="btn_add_service">Next</button>
                             </div>
-                        </form>
-                    </div>
-                    <div id="menu1" class="container tab-pane fade"><br>
-                        <form action="{{route('admin.detail.store')}}" method="POST">
-                            @csrf
-                            <div class="item form-group">
-                                <label class="title-input">Tên dịch vụ</label>
-                                <select name="service" class="form-control" style="width: 30%">
-    {{--                                @foreach($sv as $s)--}}
-    {{--                                    <option value="{{$s->sv_id}}">{{$s->sv_name}}</option>--}}
-    {{--                                @endforeach--}}
-                                </select>
-                            </div>
-                            <div class="item form-group">
-                                <label class="title-input">Khối lượng công việc</label>
-                                <input type="text" name="aow" class="form-control" style="width: 30%">
-                            </div>
-                            <div class="item form-group">
-                                <label class="title-input">Giá dịch vụ ứng với khối lượng công việc trên</label>
-                                <input type="text" name="price" class="form-control" style="width: 30%">
-                            </div>
-                            <div class="item form-group">
-                                <p class="title-input">Ghi chú về dịch vụ</p>
-                                <textarea name="note" cols="50" rows="8"></textarea>
-                            </div>
-                            <div>
-                                <button type="submit"  class="btn btn-primary">ADD</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div id="menu2" class="container tab-pane fade"><br>
-                        <div class="item form-group">
-                            <label class="title-input">Tên dịch vụ</label>
-                            <select name="service" id="sv_name" class="form-control" style="width: 30%">
-{{--                                @foreach($service as $sv)--}}
-{{--                                    <option value="{{$sv->sv_id}}">{{$sv->sv_name}}</option>--}}
-{{--                                @endforeach--}}
-                            </select>
-                        </div>
-                        <div class="item form-group">
-                            <label class="title-input">Khối lượng công việc</label>
-                            <select name="detail_service" id="KLg" class="form-control" style="width: 30%">
-{{--                                @foreach($detailsv as $detail)--}}
-{{--                                    <option value="{{$detail->id}}">{{$detail->amount_of_work}}</option>--}}
-{{--                                @endforeach--}}
-                            </select>
-                        </div>
-                        {{--                <div class="item form-group">--}}
-                        {{--                    <label class="title-input">Giá dịch vụ ứng với khối lượng công việc trên</label>--}}
-                        {{--                        <input type="text" name="sub_name" class="form-control" style="width: 30%" value="{{$detail->price}}">--}}
-                        {{--                </div>--}}
-                        <div class="item form-group">
-                            <label class="title-input">Tên dịch vụ đi kèm</label>
-                            <input type="text" name="sub_name" class="form-control" style="width: 30%">
-                        </div>
-                        <div class="item form-group">
-                            <label class="title-input">Giá</label>
-                            <input type="text" name="price" class="form-control" style="width: 30%">
-                        </div>
-                        <div class="item form-group">
-                            <p class="title-input">Mô tả về dịch vụ đi kèm theo</p>
-                            <textarea name="description" cols="70" rows="12"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-primary">ADD</button>
                         </div>
                     </div>
                 </div>
-
-
-
-{{--                <div>--}}
-{{--                    <div class="item form-group">--}}
-{{--                        <p class="title-input">Tên dịch vụ</p>--}}
-{{--                        <input type="text" name="sv_name" class="form-control" style="width: 30%">--}}
-{{--                    </div>--}}
-{{--                    <div class="item form-group">--}}
-{{--                        <p class="title-input">Mô tả về dịch vụ</p>--}}
-{{--                        <textarea name="description" cols="50" rows="8"></textarea>--}}
-{{--                    </div>--}}
-{{--                    <div class="item form-group">--}}
-{{--                        <label class="title-input">Khối lượng công việc</label>--}}
-{{--                        <input type="text" name="aow" class="form-control" style="width: 30%">--}}
-{{--                    </div>--}}
-{{--                    <div class="item form-group">--}}
-{{--                        <label class="title-input">Giá dịch vụ ứng với khối lượng công việc trên</label>--}}
-{{--                        <input type="text" name="price" class="form-control" style="width: 30%">--}}
-{{--                    </div>--}}
-{{--                    <div class="item form-group">--}}
-{{--                        <p class="title-input">Ghi chú về dịch vụ</p>--}}
-{{--                        <textarea name="note" cols="50" rows="8"></textarea>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <button type="submit"  class="btn btn-primary">Quay lại</button>--}}
-{{--                        <button type="submit" class="btn btn-primary">Thêm</button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </form>--}}
-{{--        </div>--}}
+                <div class="tab-pane fade" id="detail_service">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Detail Service</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label>Khối lượng công việc</label>
+                                <input type="text" name="aow" class="form-control" style="width: 30%">
+                            </div>
+                            <div class="form-group">
+                                <label>Giá dịch vụ ứng với khối lượng công việc trên</label>
+                                <input type="text" name="price" class="form-control" style="width: 30%">
+                            </div>
+                            <div class="form-group">
+                                <label>Ghi chú về dịch vụ</label>
+                                <textarea name="note" cols="50" rows="8"></textarea>
+                            </div>
+                            <div>
+                                <button type="button" name="previous_btn_detail_service" id="previous_btn_detail_service"  class="btn btn-info btn-lg">Previous</button>
+                                <button type="submit"  name="btn_detail_service" id="btn_detail_service"  class="btn btn-primary btn-lg">ADD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('#btn_add_service').click(function () {
+                $('#add_service').removeClass('active active_service');
+                $('#add_service').removeAttr('href data-toggle');
+                $('#service').removeClass('active');
+                $('#add_service').addClass('inactive_service');
+                $('#add_detail_service').removeClass('inactive_service');
+                $('#add_detail_service').addClass('active active_service');
+                $('#add_detail_service').attr('href', 'detail_service');
+                $('#add_detail_service').attr('data-toggle', 'tab');
+                $('#detail_service').removeClass('fade');
+                $('#detail_service').addClass('active');
+            });
+            $('#previous_btn_detail_service').click(function () {
+                $('#add_detail_service').removeClass('active active_service');
+                $('#add_detail_service').removeAttr('href', 'detail_service');
+                $('#add_detail_service').removeAttr('data-toggle', 'tab');
+                $('#detail_service').removeClass('active ');
+                $('#detail_service').addClass('inactive_service');
+                $('#add_service').removeClass('inactive_service');
+                $('#add_service').addClass('active active_service');
+                $('#service').addClass('active');
+                $('#add_service').removeClass('inactive_service');
+            })
+        });
+    </script>
 @endsection
