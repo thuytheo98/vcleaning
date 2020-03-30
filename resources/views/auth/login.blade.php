@@ -2,28 +2,31 @@
 @section('title', 'Đăng nhập tài khoản')
 
 @section('content')
-    <i>Trang chủ/Đăng nhập</i>
-    <div class="row">
-        <form action="{{route('login')}}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="exampleInputEmail1">{{__("messages.LoginPage.email")}}</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       placeholder="Enter username" name="email">
+    <p style="margin-top: 10px;"><i>Trang chủ/Đăng nhập</i></p>
+    <div class="row login">
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    <h3>{{__("messages.LoginPage.title")}}</h3>
+                </div>
+                <form action="{{route('login')}}" method="POST">
+                    @csrf
+                    <div class=" input-custom form-group">
+                        <label>{{__("messages.LoginPage.email")}}</label>
+                        <input type="text" class="form-control" id="InputEmail1" placeholder="Enter username" name="email">
+                    </div>
+                    <div class="input-custom form-group">
+                        <label>{{__('messages.LoginPage.password')}}</label>
+                        <input type="password" class="form-control" id="InputPassword1" placeholder="Password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">{{__('messages.LoginPage.button')}}</button>
+                    <a href="" class="forget">{{__("messages.LoginPage.quespass")}}</a>
+                    <div class="register-link">
+                        <p>{{__('messages.LoginPage.account')}}<a href="">{{__('messages.LoginPage.register')}}</a></p>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.LoginPage.password')}}</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Remember me</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <div>
-                <p>Chưa có tài khoản?<a href="">Đăng ký ngay</a></p>
-            </div>
-        </form>
+        </div>
     </div>
     @if ($errors->any())
         <div class="alert alert-danger">

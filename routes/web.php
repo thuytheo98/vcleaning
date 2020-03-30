@@ -66,18 +66,38 @@ Route::prefix('admin')->group(function (){
 
 
 
-
-
+//Route::prefix('{locale}')->group(function (){
+//    Route::match(['get', 'post'], 'login', 'Admin\AuthController@login')->name('login');
+//});
 Route::match(['get', 'post'], 'login', 'Admin\AuthController@login')->name('login');
+
 
 Route::match(['get', 'post'], 'logout', 'Admin\AuthController@logout')->name('logout');
 
-Route::middleware(['user.login'])->group(function (){
+//middleware(['user.login'])
+//Route::groups(function (){
 
     Route::resource('users', 'Admin\UserController')->names([
         'index' => 'usr.users.index',
         'create' => 'usr.users.create'
     ]);
+    Route::get('home', function (){
+        return view('pages.index');
+    })->name('index');
+    Route::get('contact', function (){
+        return view('pages.contact');
+    })->name('contact');
+    Route::get('about', function (){
+        return view('pages.about');
+    })->name('about');
+    Route::get('register', function (){
+        return view('pages.register_vcer');
+    })->name('vcer');
+
+
+//middleware(['user.login'])
+    Route::middleware(['user.login'])->group(function (){
+
     //chon service se nhary ra form dang ky service va cac buoc xac nhan den khi thanh toan
     Route::resource('services', 'Admin\ServiceController')->names([
         'index' => 'usr.service.index',
@@ -88,7 +108,11 @@ Route::middleware(['user.login'])->group(function (){
         'create' => 'usr.orders.create',
         'show' => 'usr.orders.show'
     ]);
-});
+    });
+Route::get('{locale}', function ($locale){
+    Session::put('locale', $locale);//put locale vào session rồi middleware Localization sẽ kiểm tra và chạy locale đó =>vứt middleware đó vào middlewaregroup để duyệt qua mọi loại route
+    return redirect()->back(); //quay về luôn trang vừa nãy vs locale
+})->name('locale');
 
 
 

@@ -5,28 +5,25 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item" style="margin: 0 30px;">
-                <a class="nav-link" href="#">Giới thiệu</a>
+                <a class="nav-link" href="{{route('about')}}">{{__('messages.header.about')}}</a>
             </li>
             <li class="nav-item" style="margin: 0 20px;">
-                <a class="nav-link" href="#">Dịch vụ</a>
+                <a class="nav-link" href="{{route('usr.service.index')}}">{{__('messages.header.service')}}</a>
             </li>
-{{--            <li class="nav-item" style="margin: 0 20px;">--}}
-{{--                <a class="nav-link" href="#">Tin tức-Blog</a>--}}
-{{--            </li>--}}
             <li class="nav-item" style="margin: 0 20px;">
-                <a class="nav-link" href="#">Liên hệ</a>
+                <a class="nav-link" href="{{route('contact')}}" >{{__('messages.header.contact')}}</a>
             </li>
             <li class="nav-item active" style="margin: 0 20px;">
-                <a class="nav-link" href="#">Tuyển dụng</a>
+                <a class="nav-link" href="{{route('vcer')}}">{{__('messages.header.register')}}</a>
             </li>
             <li class="nav-item" style="margin: 0 20px;">
-                <a class="nav-link" href="#">Đăng nhập</a>
+                <a class="nav-link" href="{{route('login')}}">{{__('messages.header.login')}}</a>
             </li>
             <li class="nav-item dropdown" style="margin: 0 20px;">
-                <a href="#" class="nav-link" data-toggle="dropdown">Language</a>
+                <a href="#" class="nav-link" data-toggle="dropdown">{{__('messages.header.lang')}}</a>
                 <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="">English</a></li>
-                    <li class="dropdown-item"><a href="">Tiếng Việt</a></li>
+                    <li class="dropdown-item"><a href="{{ route('locale', 'en') }}">English</a></li>
+                    <li class="dropdown-item"><a href="{{ route('locale', 'vi') }}">Tiếng Việt</a></li>
                 </ul>
             </li>
         </ul>

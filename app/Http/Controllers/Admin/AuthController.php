@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public $dirView = 'auth.';
-
     public function login(Request $request){
-        App::setLocale('vi');
+//        App::setLocale('en');
         if(Auth::check()){
-            return redirect()->route('usr.users.index');
+            return redirect()->route('index');
         }
         if($request->isMethod('post')){
             $request->validate([
@@ -26,14 +25,14 @@ class AuthController extends Controller
                 'password' => 'required|max:64'
             ]);
             $dataLogin = [
-                'name' => $request['username'],
+                'email' => $request['email'],
                 'password' => $request['password']
             ];
             $auth = Auth::attempt($dataLogin, false);
             if (!$auth){
                 return back()->withInput()->withErrors("login fail");
             }
-            return redirect()->route('usr.users.index');
+            return redirect()->route('index');
         }
         return view($this->dirView . 'login');
     }

@@ -1,391 +1,177 @@
-/*LOGIN*/
 .login{
-    background-color: #ECC74E;
-    width: 400px;
-    height: 220px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    position: absolute;
-    border: 1px solid #6B6C6F;
-    border-radius: 10px;
-    padding: 10px 10px;
-    font-family: arial;
-}
-.login .title{
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
-    opacity: 1;
-}
-.login .logo-login{
-    display: flex;
-    justify-content: center;
-}
-.login .logo-login span{
-    margin-left: 10px;
-    font-weight: 600;
-    text-align: center;
-    font-size :26px;
-}
-
-.login .item{
-    margin-top: 15px;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-}
-.login.item .title-input{
-    font-size :18px;
-    color: #6B6C6F;
-    font-weight: 500;
-    width: 50%;
-}
-.login .item .container-input .input-custom{
-    border-radius: 4px;
-    width: 250px;
-    height: 37px;
-    border: 1px solid #6B6C6F;
-}
-.login .btn-login{
-    margin-top: 15px;
-    float: right;
-}
-.login .btn-login button{
-    border: 1px solid #6B6C6F;
-    height: 33px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.register{
-    width: 500px;
-    height: 600px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: goldenrod;
-    border-radius: 10px;
-    padding: 10px 15px;
-    border: 1px solid #6B6C6F;
-}
-/* REGISTER*/
-.register .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.register .logo span{
-    margin-top: 7px;
-    font-size: 24px;
-}
-.register .title{
-    text-align: center;
-    font-family: SansSerif;
-    font-size: 24px;
-    font-weight: 600;
-    opacity: 0.5%;
-}
-.register .item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-}
-.register .item .title-input{
-    font-size: 23px;
-    font-weight: 500;
-    width: 50%;
-}
-.register .item .input-custom{
-    width: 250px;
-    height: 30px;
-    border: 1px solid #6B6C6F;
-    border-radius: 10px;
-    padding: 5px;
-}
-.register .item .dmy{
-    width: 70px;
-    margin-right: 10px;
-    float: left;
-    display: flex;
-    justify-content: center;
-}
-.register .item .dmy:last-child{
-    margin-right: 0;
-}
-register .item .dmy .dmy-title{
-    font-size: 16px;
-    padding: 5px;
-    font-family: SansSerif;
-}
-.register .button-wrap{
-    display: flex;
-    justify-content:  flex-end;
-    align-items: baseline;
-}
-.register .btn{
-    box-sizing: border-box;
-    margin-top: 5px;
-    margin-right: 20px;
-    float: left;
-}
-.register button{
-    padding: 12px;
-    border-radius: 7px;
-    border: 1px solid #6B6C6F;
-    font-size: 16px;
-}
-.register .btn-return button:hover{
-    background-color: #ea704d;
-    color: black;
-    border: 1px solid #454543;
-    cursor: pointer;
-}
-.register .btn-register button:hover{
-    background-color: #ea704d;
-    color: black;
-    border: 1px solid #454543;
-    cursor: pointer;
-}
-
-/*admin*/
-
-html, div{
-    font-size: 14px;
-    font-family: arial;
-}
-body{
-    margin: 0;
-    padding: 0;
-    font-family: SansSerif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-}
-div{
-    box-sizing: border-box;
-}
-button{
-    cursor: pointer;
-    /*background-color: #ECC74E;*/
-    /*border: 1px solid #FBFBFD;*/
-    /*height: 40px;*/
-    /*border-radius: 7px;*/
-    /*font-size: 14px;*/
-    /*font-weight: 500;*/
-}
-button:hover{
-    transform: scale(1.00);
-}
-a{
-    text-decoration: none;
-}
-@media (max-width: 500px) {
-    .row, .navbar {
-        flex-direction: column;
-    }
-}
-.navbar{
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0;
-    background-color: #ef9cac;
-    color: #444248;
-    min-height: 50px;
-    text-shadow: 1px 1px 4px #0000007d;
-}
-.navbar .logo{
-    float: left;
-    display: block;
-    box-sizing: border-box;
-    font-size: 20px;
-    font-weight: 600;
-    padding-left: 20px;
-    padding-top: 10px;
-}
-.navbar .nav-right{
-    float: right;
-}
-.navbar .nav-right ul{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.navbar .nav-right ul li{
-    float: left;
-    padding: 15px 25px;
-}
-.navbar .nav-right ul li a{
-    text-decoration: none;
-    color: #444248;
+    margin: 30px 0;
+    padding: 50px 0;
+    font-family: 'Baloo Chettan 2', cursive;
 }
 .content{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: flex-start;
-    background: black;
+    width: 500px;
+    margin: 0 auto ;
+    line-height:  30px;
+    padding: 50px 20px;
+    background-color: #cbd3da;
+    border-radius: 8px;
 }
-.content .sidebar{
-    display: flex;
-    width: 230px;
-    min-height: 100%;
-    background-color: black;
-    color: white;
-    flex-direction: column;
-}
-.content .sidebar .logo-cus{
-    padding: 20px 10px;
+.content .title{
+    font-size: 25px;
+    text-align: center;
     margin-bottom: 20px;
 }
-.content .sidebar .sidebar-nav .main-menu{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.content .input-custom{
+    margin: 15px 0;
 }
-.content .sidebar .sidebar-nav .main-menu li{
-    padding: 15px;
-}
-.content .sidebar .sidebar-nav .main-menu li:hover{
-    background: #ef9cac;
-}
-.content .sidebar .sidebar-nav .main-menu .active{
-    background-color: #ef9cac;
-}
-.content .sidebar .sidebar-nav .main-menu li a{
-    text-decoration: none;
-    color: white;
+.content .input-custom label{
     font-size: 16px;
-    font-weight: 500;
 }
-.content .sidebar .sidebar-nav .main-menu li a:hover{
-    color: black;
+.content .input-custom input{
+    height: 47px;
 }
-.content .widget{
-    padding: 15px;
-}
-.content .widget a{
-    text-decoration: none;
-    color: white;
-}
-.content .main{
-    /*background: white;*/
-    width: 100%;
-    min-height: 900px;
-    background: lightgray;
-}
-.footer{
-    background: #4e555b;
-    color: #cbd3da;
-    min-height: 10px;
-    padding: 10px 15px;
-    line-height: 10px;
-}
-
-
-.login{
-    background-color: #ECC74E;
-    width: 400px;
-    height: 200px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    position: absolute;
-    border: 1px solid #6B6C6F;
-    border-radius: 10px;
-    padding: 10px 10px;
-    font-family: arial;
-}
-.login .title{
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
-    opacity: 1;
-}
-.login .logo-login{
+.content button{
+    cursor: pointer;
     display: flex;
     justify-content: center;
-}
-.login .logo-login span{
-    margin-left: 10px;
-    font-weight: 600;
-    text-align: center;
-    font-size:26px;
-}
-
-.login .item{
+    padding-left: 30px;
+    margin-bottom: 15px;
     margin-top: 15px;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
+    width: 30%;
 }
-.login.item .title-input{
-    font-size :18px;
+.content .register-link{
+    margin-top: 15px;
+}
+/*contact*/
+.contact{
+    margin: 30px;
+    padding: 70px;
     color: #6B6C6F;
-    font-weight: 500;
-    width: 50%;
 }
-.login .item .container-input .input-custom{
-    border-radius: 4px;
-    width: 250px;
-    height: 37px;
-    border: 1px solid #6B6C6F;
+.information{
+    width: 40%;
+    float: left;
+    box-sizing: border-box;
 }
-.login .btn-login{
-    margin-top: 15px;
-    float: right;
-}
-.login .btn-login button{
-    border: 1px solid #6B6C6F;
-    height: 33px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.list-employee{
-    width: 100%;
-    margin: 10px;
-    padding: 10px;
-    background-color: white;
-}
-.list-employee .title-list{
+#map{
+    width: 60%;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 40px;
     margin-bottom: 50px;
 }
-.list-employee .title-list .float-left{
-    box-sizing: border-box;
-    margin-right: 20px;
-    float: left;
+/*about*/
+.gioithieu{
+    text-align: justify;
+    margin: 50px auto;
+    padding: 40px 0;
+    width: 800px;
+    clear: both;
+    line-height: 50px;
+    font-family: 'Baloo Chettan 2', cursive;
 }
-.list-employee .title-list .float-left .title{
-    font-size: 22px;
-    font-weight: 600;
-    font-family: SansSerif;
-}
-.list-employee .title-list .float-right{
-    float:right;
-    margin-right: 20px;
-    border: 1px solid #6B6C6F;
-    border-radius: 5px;
-    height: 30px;
-    background-color: black;
-}
-.list-employee .title-list .float-right a{
+.gioithieu .title h3{
+    font-size: 23px;
     text-align: center;
-    text-decoration: none;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 14px;
-    color: #ef9cac;
-    font-weight: 600;
+    margin-bottom: 15px;
 }
-.list-employee .table{
-    width: 100%;
+.gioithieu .title{
+    font-weight: 600;
+    opacity: 0.5;
+    font-size: 20px;
+}
+.nghieng{
+    font-style: italic;
+}
+
+/*register-vcer*/
+.registration-vcer{
+    clear: both;
+    position: relative;
+    color: black;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+.registration-vcer .quytrinhnhanvc{
+    width: 980px;
+    margin: auto;
+    text-align: center;
+}
+.registration-vcer .quytrinhnhanvc h3{
+    font-size: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+    border-bottom-length:20px;
+}
+.registration-vcer .quytrinhnhanvc .cacbuoc{
+
+}
+.registration-vcer .quytrinhnhanvc .cacbuoc .buoc{
+    border: 1px solid #6c757d;
+    background: white;
+    color: #e4606d;
+    width: 190px;
+    height: 130px;
+    float: left;
+    margin: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+.registration-vcer .quytrinhnhanvc .cacbuoc .buoc .so-buoc{
+    position: absolute;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: -25px;
+    right: 0;
+    left: 85px;
+    bottom: 0;
+    background: black;
+    color: white;
+}
+.registration-vcer .quytrinhnhanvc .cacbuoc .buoc .title-buoc{
+    font-weight: 600;
+    font-size: 19px;
+}
+.registration-vcer .formdangky{
+    width: 900px;
+    height: 700px;
+    padding-top: 20px;
+    margin: auto;
+    text-align: center;
+}
+.registration-vcer .formdangky h3{
+    font-size: 25px;
+    padding-top: 2px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+    border-bottom-length:40px;
+}
+.registration-vcer .formdangky .item{
+
+}
+.registration-vcer .formdangky .item .title-input{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+.registration-vcer .formdangky .item .container-input .input-custom{
+    width:70%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+.registration-vcer .formdangky button{
+    cursor: pointer;
+    height: 40px;
+    padding: 7px 20px;
+    text-align: center;
+    background-color: black;
+    border-radius: 8px;
+    color: #e4606d;
+    margin-top: 20px;
+}
+
+
+
+.footer{
+    clear: both;
 }
