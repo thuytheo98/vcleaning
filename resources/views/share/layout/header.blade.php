@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center" style="padding: 10px;" >
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center" style="padding: 15px;" >
         <!-- Brand/logo -->
         <a class="navbar-brand" href="#" style="margin: 0 50px; padding-right: 70px;">Vcleaning</a>
         <!-- Links -->

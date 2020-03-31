@@ -21,7 +21,7 @@
                     <li><a href="{{route('admin.vcers.create')}}">Thêm vcer</a></li>
                 </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item admin-role" id="admin_role">
                 <a href="#menu-emp" data-toggle="collapse">
                     <i class="fal fa-cogs"></i>
                     <span class="text-sidebar">Quản lý Nhân Viên</span>

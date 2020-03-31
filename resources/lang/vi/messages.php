@@ -17,6 +17,10 @@ return [
         'register'  =>  'Đăng ký ngay',
         'button'    =>  'Login',
     ],
+    'Register_vcer'=>[
+        'title'     =>  'Quy trình đăng ký đi làm',
+        ''
+    ],
     'Index'=>[
 
     ],

@@ -8,7 +8,9 @@
                 <div class="list-icon">
                     <ul style="list-style: none">
                         <li>
-                            <a href=""><i class="fab fa-facebook-square">Face</i></a>
+                            <a href="">
+                                <i class="fab fa-facebook"></i>
+                            </a>
                         </li>
                         <li>
                             <a href=""><i class="fab fa-twitter-square">Twitter</i></a>

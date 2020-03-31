@@ -21,8 +21,12 @@ class AuthController extends Controller
             $name = $request['name'];
             $password = $request['password'];
             $auth = Auth::guard('employees')->attempt(['username'=>$name, 'password'=>$password, 'role' => '1']);
+            $authemp = Auth::guard('employees')->attempt(['username'=>$name, 'password'=>$password, 'role' => '2']);
             if(!$auth){
-                return back()->withErrors('login fail')->withInput();
+                if($authemp){
+                    $hidden_menu_emp = 'none';
+                    return redirect()->route('admin.index');
+                }
             }
             return redirect()->route('admin.index');
         }

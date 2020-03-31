@@ -3,5 +3,5 @@
 @section('title', 'Admin')
 
 @section('content')
-t o day nha
+    <?{{ document.get_called_class() }}?>
     @endsection
