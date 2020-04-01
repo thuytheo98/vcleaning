@@ -18,10 +18,103 @@
                     <td>{{$user->email}}</td>
                     <td>{{$user->phone}}</td>
                     <td class="edit">
-                        <a href="">Edit</a>
+                        <button type="button" value="{{$user->id}}" class="editUser">Edit</button>
                     </td>
                 </tr>
             @endforeach
         </table>
     </div>
+    <div id="ShowEditUser" style="display: none;">
+{{--        {{route('admin.ajax.user.update')}}--}}
+        <form action="" method="post" id="form-update-user">
+            @csrf
+            <div class="item form-group">
+                <div class="title-input">Họ và tên</div>
+                <input type="text" name="name" id="nameUser" class="custom-input form-control" value="" required>
+            </div>
+            <div class="item form-group">
+                <div class="title-input">Email</div>
+                <input type="text" name="email" id="emailUser" class="custom-input form-control" value="" required>
+            </div>
+            <div class="item form-group">
+                <div class="title-input">Phone</div>
+                <input type="text" name="phone" id="phoneUser" class="custom-input form-control" value="" required>
+            </div>
+            <input type="text" name="id" value="" id="idUser" hidden>
+            <div class="list-btn">
+                <button type="reset" class="btn btn-dark">Trở lại</button>
+                <button type="button" id="updateUser" class="btn btn-primary">Cập nhật</button>
+            </div>
+        </form>
+    </div>
 @endsection
+@section('script')
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            beforeSend: function () {
+                console.log('Cho di nhe');
+            }
+        });
+        $('.editUser').click(function () {
+            let id = $(this).attr('value');
+            let showUser = $.ajax({
+                url:'ajax/user/edit/'+ id,
+                type: 'get',
+                data: {},
+                dataType:'json',
+                success: function (response) {
+                    // console.log(response.email);
+                    $('#ShowEditUser').css({
+                        'display': 'block',
+                        'position':'absolute',
+                        'top':'200px',
+                        'right':'0',
+                        'width':'500px',
+                        'height':'300px',
+                        'border':'1px solid black',
+                    });
+                    $('#nameUser').val(response.name);
+                    $('#emailUser').val(response.email);
+                    $('#phoneUser').val(response.phone);
+                    $('#idUser').val(response.id);
+                },
+                error: function (xhr, status) {
+                    alert("Sorry, there was a problem!");
+                },
+                complete: function (xhr, status) {
+
+                }
+            });
+        });
+        $('#updateUser').click(function () {
+            let fr = $('#form-update-user');
+            let name = fr.find('input[name="name"]').val();
+            let email = fr.find('input[name="email"]').val();
+            let phone = fr.find('input[name="phone"]').val();
+            let url = fr.attr('action');
+            let type = fr.attr('method');
+            let updateUser = $.ajax({
+               url:url,
+               type:type,
+               data:{
+                   name:name,
+                   email:email,
+                   phone:phone,
+               },
+                dataType:'json',
+                success:function (response) {
+
+                },
+                error: function (xhr, status) {
+                    alert("Sorry, there was a problem!");
+                },
+                complete: function (xhr, status) {
+
+                }
+            });
+        });
+    </script>
+    @endsection

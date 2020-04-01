@@ -58,11 +58,14 @@ Route::prefix('admin')->group(function (){
             'show' => 'admin.orders.show',
             'store' => 'admin.orders.store',
         ]);
-    });
-    Route::prefix('ajax')->group(function (){
-        Route::get('detail/{idService}', 'AjaxController@getDetailService');
+        Route::prefix('ajax')->group(function (){
+//        Route::get('detail/{idService}', 'AjaxController@getDetailService')->name('admin.ajax.detail');
+            Route::get('user/edit/{id}', 'AjaxController@showEditUser');
+            Route::post('user/update/{id}', 'AjaxController@updateUser')->name('admin.ajax.user.update');
+        });
     });
 });
+
 
 
 

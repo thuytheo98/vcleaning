@@ -9,7 +9,7 @@
         <div class="list-service">
             <select name="service_name" class="form-control" style="width: 30%">
                 @foreach($services as $service)
-                    <option >{{$service->sv_name}}</option>
+                    <option value="{{$service->sv_id}}">{{$service->sv_name}}</option>
                 @endforeach
             </select>
             <p style="color: #e4606d">Chọn dịch vụ và xem chi tiết</p>

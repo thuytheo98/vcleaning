@@ -23,10 +23,10 @@
                         @endforeach
                     </select>
                 </div>
-{{--                <div class="item form-group">--}}
-{{--                    <label class="title-input">Giá dịch vụ ứng với khối lượng công việc trên</label>--}}
-{{--                        <input type="text" name="sub_name" class="form-control" style="width: 30%" value="{{$detail->price}}">--}}
-{{--                </div>--}}
+                <div class="item form-group">
+                    <label class="title-input">Giá dịch vụ ứng với khối lượng công việc trên</label>
+                        <input type="text" name="sub_name" class="form-control" style="width: 30%" value="{{$detail->price}}">
+                </div>
                 <div class="item form-group">
                     <label class="title-input">Tên dịch vụ đi kèm</label>
                     <input type="text" name="sub_name" class="form-control" style="width: 30%">
@@ -48,16 +48,22 @@
 @endsection
 @section('script')
     <script>
-        // jQuery(document).ready(function() {
-        //     console.log( "ready!" );
-        // });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         jQuery(document).ready(function () {
             $("#sv_name").change(function () {
-                var idService = $(this).val();//lay gia tri cua the select id sv_name
-                $.get('admin/ajax/detail/' + idService, function (data){
-                    console.log("oke");
-                    $("#KLg").html(data);
+                var idService = $(this).val();
+                console.log(idService);
+                let getId = $.ajax({
+
                 });
+                // $.get( + idService, function (data){
+                //     console.log("oke");
+                //     $("#KLg").html(data);
+                // });
             })
         })
     </script>

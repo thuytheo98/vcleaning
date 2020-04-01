@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="{{asset('css-custom/admin/service.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css-custom/admin/vcer.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css-custom/admin/emp.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
 @include('admin.share.layout.header')
@@ -16,7 +16,7 @@
         @yield('content')
     </div>
 </div>
+<script src="{{asset('js/app.js')}}"></script>
 @yield('script')
-<script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>

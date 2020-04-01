@@ -9,17 +9,17 @@ use App\Model\Detail_service;
 use App\Model\Service;
 use App\Model\Subservice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
 {
     public $dirView = 'admin.service.';
     public function index(){
         $users = DB::table('service')
-            ->join('detail_service', 'service.id', '=', 'service.user_id')
-            ->join('subservice', 'users.id', '=', 'orders.user_id')
-            ->select('users.*', 'contacts.phone', 'orders.price')
+            ->join('detail_service', 'service.sv_id', '=', 'detail_service.sv_id')
+            ->join('subservice', 'service.sv_id', '=', 'subservice.sv_id')
             ->get();
-
+        dd($users);
 
 
         $services = Service::all();

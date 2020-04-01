@@ -5,7 +5,7 @@
     </div>
     <div class="sidebar-nav">
         <ul class="main-menu">
-            <li  class="active">
+            <li class="active">
                 <a href="{{route('admin.index')}}">Dashboard</a>
             </li>
             <li>
@@ -61,3 +61,20 @@
 {{--        </div>--}}
     </div>
 </div>
+<script>
+    // $('.main-menu').on('click', 'li', function() {
+    //     $('.main-menu li.active').removeClass('active');
+    //     $(this).addClass('active');
+    // });
+
+    $(document).ready(function () {
+        $('.main-menu li a').click(function(e) {
+
+            $('.main-menu li.active').removeClass('active');
+
+            var $parent = $(this).parent();
+            $parent.addClass('active');
+            e.preventDefault();
+        });
+    });
+</script>

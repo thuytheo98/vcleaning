@@ -16,20 +16,8 @@ class UserController extends Controller
         $users = User::all();
         return view($this->dirView . 'list')->with("list_user", $users);
     }
-    public function create(){
-    }
-    public function show($id){
-
-    }
-
     public function edit($id){
-
-    }
-
-    public function store(Request $request){
-
-    }
-    public function destroy($id){
-
+        $editUser = User::find($id);
+        return view($this->dirView . 'edit', compact('editUser'));
     }
 }
