@@ -15,20 +15,13 @@ class ServiceController extends Controller
 {
     public $dirView = 'admin.service.';
     public function index(){
-        $users = DB::table('service')
-            ->join('detail_service', 'service.sv_id', '=', 'detail_service.sv_id')
-            ->join('subservice', 'service.sv_id', '=', 'subservice.sv_id')
-            ->get();
-        dd($users);
-
-
         $services = Service::all();
-        $detail_sv = Detail_service::all();
-        $subsv = Subservice::all();
-        return view($this->dirView . 'list',compact('services'))->with('detail', $detail_sv)->with('sub', $subsv);
+        $detailSv = Detail_service::all();
+        $subSv = Subservice::all();
+        return view($this->dirView . 'list',compact('services'))->with('detail', $detailSv)->with('sub', $subSv);
     }
     public function create(){
-        return view($this->dirView . 'add_new');
+        return view($this->dirView . 'add');
     }
     public function store(Request $request){
         //validate

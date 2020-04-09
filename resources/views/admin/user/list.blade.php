@@ -1,6 +1,11 @@
 @extends('admin.share.layout.master')
+
+@section('title', 'Admin-User')
+
 @section('content')
     <div class="title-file">Danh sách khách hàng</div>
+    <!-- Search form -->
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" style="width: 50%">
     <div class="list-user">
         <table class="table table-striped table-bordered table-hover" style="margin: 30px auto;width: 70%">
             <tr>
@@ -25,7 +30,6 @@
         </table>
     </div>
     <div id="ShowEditUser" style="display: none;">
-{{--        {{route('admin.ajax.user.update')}}--}}
         <form action="" method="post" id="form-update-user">
             @csrf
             <div class="item form-group">
@@ -58,8 +62,10 @@
                 console.log('Cho di nhe');
             }
         });
+
         $('.editUser').click(function () {
             let id = $(this).attr('value');
+            let position = $('.editUser').offset();
             let showUser = $.ajax({
                 url:'ajax/user/edit/'+ id,
                 type: 'get',
@@ -70,8 +76,8 @@
                     $('#ShowEditUser').css({
                         'display': 'block',
                         'position':'absolute',
-                        'top':'200px',
-                        'right':'0',
+                        'top': position.top,
+                        'left':position.left,
                         'width':'500px',
                         'height':'300px',
                         'border':'1px solid black',
@@ -89,6 +95,7 @@
                 }
             });
         });
+
         $('#updateUser').click(function () {
             let fr = $('#form-update-user');
             let name = fr.find('input[name="name"]').val();

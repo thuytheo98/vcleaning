@@ -19,7 +19,7 @@ Route::prefix('admin')->group(function (){
 
     Route::middleware(['admin.login'])->namespace('AdminUpdate')->group(function (){
 
-        Route::get('index', 'HomeController@index')->name('admin.index');
+        Route::get('index', 'HomeController@index')->name('admin.home.index');
 
         Route::resource('services', 'ServiceController')->names([
             'index' => 'admin.services.index',
@@ -59,8 +59,7 @@ Route::prefix('admin')->group(function (){
             'store' => 'admin.orders.store',
         ]);
         Route::prefix('ajax')->group(function (){
-//        Route::get('detail/{idService}', 'AjaxController@getDetailService')->name('admin.ajax.detail');
-            Route::get('user/edit/{id}', 'AjaxController@showEditUser');
+            Route::get('user/edit/{id}', 'UserController@showEditUser');
             Route::post('user/update/{id}', 'AjaxController@updateUser')->name('admin.ajax.user.update');
         });
     });
@@ -95,7 +94,7 @@ Route::get('home', function (){
         return view('pages.register_vcer');
     })->name('vcer');
 
-    Route::middleware(['user.login'])->group(function (){
+        Route::middleware(['user.login'])->group(function (){
 
         //chon service se nhary ra form dang ky service va cac buoc xac nhan den khi thanh toan
         Route::resource('services', 'Admin\ServiceController')->names([

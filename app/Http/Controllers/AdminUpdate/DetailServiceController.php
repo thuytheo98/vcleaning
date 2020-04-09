@@ -12,10 +12,6 @@ use Illuminate\Http\Request;
 class DetailServiceController extends Controller
 {
     public $dirView = 'admin.service.';
-//    public function create(){
-//        $sv = Service::all();
-//        return view($this->dirView . 'add-detail',compact('sv'));
-//    }
     public function create(){
         $sv = Service::all();
         return view($this->dirView . 'add-detail',compact('sv'));
@@ -27,12 +23,13 @@ class DetailServiceController extends Controller
             'price' => 'numeric|required',
             'note' => 'nullable',
         ]);
-        $detail = new Detail_service();
-        $detail->amount_of_work = $request->aow;
-        $detail->price = $request->price;
-        $detail->note = $request->note;
-        $detail->sv_id = $request->service;
-        $detail->save();
+
+        $detailSv = new Detail_service();
+        $detailSv->amount_of_work = $request->aow;
+        $detailSv->price = $request->price;
+        $detailSv->note = $request->note;
+        $detailSv->sv_id = $request->service;
+        $detailSv->save();
         return redirect()->route('admin.subservice.create');
     }
 }

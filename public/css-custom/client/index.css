@@ -1,0 +1,98 @@
+.wrapper .text-wrapper{
+    font-family: 'Baloo Chettan 2', cursive;
+}
+.wrapper .text-wrapper .text-image-wrapper{
+
+}
+.wrapper .text-wrapper .text-image-wrapper .text-image-content{
+    padding: 30px 100px;
+}
+.wrapper .text-wrapper .text-image-wrapper .text-image-content .text-image-title{
+
+}
+.wrapper .text-wrapper .text-image-wrapper .text-image-content.text-image-description{
+    font-size: 18px;
+}
+.wrapper .image-wrapper .image-box img{
+    width: 550px;
+}
+.text-across{
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.reason{
+    font-family: 'Baloo Chettan 2', cursive;
+    margin-top: 20px;
+}
+.reason .image-reason .image-box img{
+    width: 550px;
+}
+.reason .text-reason .text-image-reason{
+    padding: 30px;
+}
+.reason .text-reason .text-image-reason .text-image-content{
+    margin: 20px 30px;
+}
+.reason .text-reason .text-image-reason .text-image-content .text-image-item{
+    margin: 20px;
+    padding-left: 50px;
+}
+.service-box{
+    border: 1px solid #7abaff;
+    border-radius: 3px;
+    width: 300px;
+    height: 400px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+.service-box .service-box-content{
+    padding: 7px  10px;
+}
+.service-box .service-box-content .service-box-image img{
+    width: 250px;
+    height: 200px;
+}
+.service-box .service-box-content .service-box-title{
+    text-align: center;
+}
+.service-box .service-box-content .btn-info-service{
+    text-align: center;
+}
+.service-box .service-box-content .btn-info-service a{
+    border: 1px solid #7abaff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #7abaff;
+    padding: 5px 10px;
+}
+.support{
+    margin-top: 50px;
+}
+.support .text-support{
+    font-family: 'Baloo Chettan 2', cursive;
+}
+.support .text-support .text-image-support{
+
+}
+.support .text-support .text-image-support .text-image-content{
+    padding: 30px 100px;
+}
+.support .text-support .text-image-support .text-image-content .text-image-title{
+
+}
+.support .text-support .text-image-support .text-image-content.text-image-description{
+    font-size: 18px;
+}
+.support .image-support .image-box img{
+    width: 550px;
+}
+.support .text-support .text-image-support .btn-support{
+    text-align: center;
+}
+.support .text-support .text-image-support .btn-support a{
+    border: 1px solid #7abaff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #7abaff;
+    padding: 5px 10px;
+}

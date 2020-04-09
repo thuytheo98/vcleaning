@@ -4,14 +4,14 @@
     padding: 0;
     font-family: 'Baloo Chettan 2', cursive;
 }
-/*add service*/
-.add-service{
-    margin: 0 auto;
-}
-.active_service{
-    background-color: #ffffff ;
-    color: #333;
-    font-weight: 600;
-}
+/*!*add service*!*/
+/*.add-service{*/
+/*    margin: 0 auto;*/
+/*}*/
+/*.active_service{*/
+/*    background-color: #ffffff ;*/
+/*    color: #333;*/
+/*    font-weight: 600;*/
+/*}*/
 
 /*edit service*/

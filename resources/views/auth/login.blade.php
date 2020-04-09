@@ -1,8 +1,13 @@
-@extends('share.layout.master')
-@section('title', 'Đăng nhập tài khoản')
-
-@section('content')
-    <p style="margin-top: 10px;"><i>Trang chủ/Đăng nhập</i></p>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{env("APP_NAME")}} - Đăng nhập tài khoản</title>
+    <link rel="stylesheet" href="{{asset('css-custom/client/admin.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css-custom/client/header-client.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <script src="{{asset('js/app.js')}}"></script>
+</head>
+<body>
     <div class="row login">
         <div class="container">
             <div class="content">
@@ -27,15 +32,16 @@
                 </form>
             </div>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    @endsection
+</body>
+</html>
 

@@ -16,12 +16,9 @@
             </li>
             <li class="dropdown">
                 <a href="#" data-toggle="dropdown">
-{{--                    <div class="employee-login">{{$data_user->username}}</div>--}}
                     <div class="employee-login">Thuys</div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
-{{--                    <li class="emp-role">{{$role}}</li>--}}
-{{--                    <li class="emp-role">Admin</li>--}}
                     <li class="dropdown-item"><a href="#">Profile</a></li>
                     <li class="dropdown-item"><a href="{{route('admin.logout')}}">Logout</a></li>
                 </ul>

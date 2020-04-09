@@ -41,6 +41,7 @@
                        <input type="text" name="status" class="custom-input form-control" required>
                     </div>
                     <div class="list-btn">
+                        <button type="button" class="btn btn-dark">Back</button>
                         <button type="reset" class="btn btn-dark">Reset</button>
                         <button type="submit" class="btn btn-primary">ADD</button>
                     </div>

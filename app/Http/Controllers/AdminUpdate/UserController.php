@@ -20,4 +20,9 @@ class UserController extends Controller
         $editUser = User::find($id);
         return view($this->dirView . 'edit', compact('editUser'));
     }
+    public function showEditUser($id){
+        $editUser = \App\User::where('id', $id)->first();
+        return response()->json($editUser);
+    }
+
 }

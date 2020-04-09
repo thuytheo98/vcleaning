@@ -1,4 +1,7 @@
 @extends('admin.share.layout.master')
+
+@section('title', 'Admin-Order')
+
 @section('content')
     <div class="list-emp">
         <div class="title-file">

@@ -5,25 +5,17 @@
     </div>
     <div class="sidebar-nav">
         <ul class="main-menu">
-            <li class="active">
-                <a href="{{route('admin.index')}}">Dashboard</a>
+            <li class="{{(strpos(\Route::currentRouteName(), 'admin.home') !== false)? 'active' : ''}}">
+                <a href="{{route('admin.home.index')}}">Dashboard</a>
             </li>
-            <li>
+            <li class="{{(strpos(\Route::currentRouteName(), 'admin.orders') !== false)? 'active' : ''}}">
                 <a href="{{route('admin.orders.index')}}">Quản lý Hóa Đơn</a>
             </li>
-            <li class="menu-item">
-                <a href="#menu-vcer" data-toggle="collapse">
-                    <i class="fal fa-cogs"></i>
-                    <span class="text-sidebar">Quản lý Vcer</span>
-                </a>
-                <ul id="menu-vcer" class="collapse">
-                    <li><a href="{{route('admin.vcers.index')}}">Danh sách Vcer</a></li>
-                    <li><a href="{{route('admin.vcers.create')}}">Thêm vcer</a></li>
-                </ul>
+            <li class="{{(strpos(\Route::currentRouteName(), 'admin.vcers') !== false)? 'active' : ''}}">
+                <a href="{{route('admin.vcers.index')}}">Quản lý Vcer</a>
             </li>
-            <li class="menu-item admin-role" id="admin_role">
+            <li class="{{(strpos(\Route::currentRouteName(), 'admin.employees') !== false)? 'active' : ''}}">
                 <a href="#menu-emp" data-toggle="collapse">
-                    <i class="fal fa-cogs"></i>
                     <span class="text-sidebar">Quản lý Nhân Viên</span>
                 </a>
                 <ul id="menu-emp" class="collapse">
@@ -31,9 +23,8 @@
                     <li><a href="{{route('admin.employees.create')}}">Thêm nhân viên</a></li>
                 </ul>
             </li>
-            <li class="menu-item">
+            <li class="{{(strpos(\Route::currentRouteName(), 'admin.services') !== false)? 'active' : ''}}">
                 <a href="#menu-service" data-toggle="collapse">
-                    <i class="fal fa-cogs"></i>
                     <span class="text-sidebar">Quản lý Dịch Vụ</span>
                 </a>
                 <ul id="menu-service" class="collapse">
@@ -43,7 +34,7 @@
                     <li><a href="{{route('admin.subservice.create')}}">Thêm dịch vụ kèm theo</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="{{(strpos(\Route::currentRouteName(), 'admin.users') !== false)? 'active' : ''}}" >
                 <a href="{{route('admin.users.index')}}">Quản lý Khách Hàng</a>
             </li>
         </ul>
@@ -53,28 +44,5 @@
                 <span class="text-sidebar">Setting</span>
             </a>
         </div>
-{{--        <div class="widget">--}}
-{{--            <a href="{{route('admin.logout')}}">--}}
-{{--                <i class="fas fa-sign-out-alt"></i>--}}
-{{--                <span class="text-sidebar">Log out</span>--}}
-{{--            </a>--}}
-{{--        </div>--}}
     </div>
 </div>
-<script>
-    // $('.main-menu').on('click', 'li', function() {
-    //     $('.main-menu li.active').removeClass('active');
-    //     $(this).addClass('active');
-    // });
-
-    $(document).ready(function () {
-        $('.main-menu li a').click(function(e) {
-
-            $('.main-menu li.active').removeClass('active');
-
-            var $parent = $(this).parent();
-            $parent.addClass('active');
-            e.preventDefault();
-        });
-    });
-</script>

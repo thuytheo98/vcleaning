@@ -50,8 +50,8 @@ class EmployeeController extends Controller
         return redirect()->route("admin.employees.index");
     }
     public function edit($id){
-        $arr_emp = Employee::find($id);
-        return view($this->dirView . 'edit_emp')->with("edit", $arr_emp);
+        $arrEmp = Employee::find($id);
+        return view($this->dirView . 'edit_emp')->with("edit", $arrEmp);
     }
     public function update(Request $request,$id){
         $editEmp = Employee::find($id);

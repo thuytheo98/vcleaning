@@ -4,7 +4,7 @@
     <h3>Chọn dịch vụ</h3>
     <div class="services">
         @foreach($listsv as $getname)
-            <a class="choose-item item-giatui">
+            <a class="choose-item item-giatui" href="#">
                 <div class="icon-circle">
                     <i class="fas fa-air-conditioner"></i>
                     <h5>{{$getname->sv_name}}</h5>
@@ -12,8 +12,5 @@
             </a>
         @endforeach
     </div>
-    <script type="text/javascript">
-
-    </script>
 </div>
 @endsection

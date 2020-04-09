@@ -21,7 +21,6 @@ class SubServiceController extends Controller
     }
     public function store(Request $request){
         //validate
-        //new subservice
         $newSub = new Subservice();
         $newSub->name = $request->sub_name;
         $newSub->price = $request->price;
