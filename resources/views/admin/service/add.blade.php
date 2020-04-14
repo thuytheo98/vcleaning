@@ -2,25 +2,30 @@
 @section('title', 'Services')
 
 @section('content')
-    <div class="row">
-        <div class="add-service col-6">
+        <div class="add-service">
             <h2 class="add-title">Thêm mới dịch vụ</h2>
             <form action="{{route('admin.services.store')}}" method="POST">
                 @csrf
-                <div class="">
-                    <div class="add-service">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">Service</div>
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <label>Tên dịch vụ</label>
-                                    <input type="text" id="sv_name" name="sv_name" class="form-control" style="width: 30%">
-                                </div>
-                                <div class="form-group">
-                                    <p>Mô tả về dịch vụ</p>
-                                    <textarea name="description" cols="50" rows="8"></textarea>
-                                </div>
+                <div class="text-image-service row">
+                    <div class="text-service-info col-6">
+                        <div class="form-group">
+                            <label>Tên dịch vụ</label>
+                            <input type="text" id="sv_name" name="serviceName" class="form-control" style="width: 30%">
+                        </div>
+                        <div class="form-group">
+                            <p>Mô tả về dịch vụ</p>
+                            <textarea name="description" cols="50" rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="image-service-info col-6">
+                        <div class="image-service-content">
+                            <div class="title">
+                                Ảnh đại diện | Chọn ảnh
                             </div>
+                            <div class="box-image">
+                                <img src="" alt="" id="output" class="image-file" style="width: 200px;  height: 200px; border-radius: 200px;">
+                            </div>
+                            <input type="file" name="image" class="open-image" id="image">
                         </div>
                     </div>
                 </div>
@@ -30,5 +35,4 @@
                 </div>
             </form>
         </div>
-    </div>
 @endsection

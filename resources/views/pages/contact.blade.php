@@ -1,5 +1,5 @@
 @extends('share.layout.master')
-@section('title', 'Đăng nhập tài khoản')
+@section('title', 'Liên hệ')
 
 @section('content')
     <p style="margin-top: 10px; margin-left: 30px;"><i>Trang chủ/Liên hệ</i></p>

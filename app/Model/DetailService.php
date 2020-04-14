@@ -6,7 +6,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Detail_service extends Model
+class DetailService extends Model
 {
     public $table = 'detail_service';
     public $primaryKey = 'id';

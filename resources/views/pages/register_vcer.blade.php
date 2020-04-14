@@ -1,5 +1,5 @@
 @extends('share.layout.master')
-@section('title', 'Đăng nhập tài khoản')
+@section('title', 'Tuyển dụng')
 
 @section('content')
     <div class="registration-vcer">

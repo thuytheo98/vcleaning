@@ -9,7 +9,7 @@
             <div>
                 <div class="item form-group">
                     <label class="title-input">Tên dịch vụ</label>
-                    <select name="service" class="form-control" style="width: 30%">
+                    <select name="serviceName" class="form-control" style="width: 30%">
                         @foreach($sv as $s)
                             <option value="{{$s->sv_id}}">{{$s->sv_name}}</option>
                         @endforeach
@@ -43,4 +43,5 @@
         @endif
     </div>
 @endsection
+
 
