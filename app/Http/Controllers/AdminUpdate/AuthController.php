@@ -21,6 +21,7 @@ class AuthController extends Controller
         }
 
         if($request->isMethod('post')){
+
             $name = $request['name'];
             $password = $request['password'];
             $auth = Auth::guard('employees')->attempt([

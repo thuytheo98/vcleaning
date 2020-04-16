@@ -12,13 +12,13 @@
     border: 1px solid #6B6C6F;
     border-radius: 10px;
     padding: 10px 10px;
-    font-family: arial;
 }
 .login .title{
     font-size: 20px;
     text-align: center;
     font-weight: bold;
     opacity: 1;
+    margin-bottom: 10px;
 }
 .login .logo-login{
     display: flex;
@@ -156,11 +156,13 @@ a{
     padding: 0;
 }
 .content .sidebar .sidebar-nav .main-menu li{
-    padding: 15px;
+    padding: 10px;
+    margin: 10px 0;
 }
-.content .sidebar .sidebar-nav .main-menu li:hover{
-    background: #ef9cac;
-}
+/*.content .sidebar .sidebar-nav .main-menu li:hover{*/
+/*    background: #ef9cac;*/
+/*    color: black;*/
+/*}*/
 .content .sidebar .sidebar-nav .main-menu .active{
     background-color: #ef9cac;
 }
@@ -170,13 +172,16 @@ a{
     font-size: 16px;
     font-weight: 500;
 }
-.content .sidebar .sidebar-nav .main-menu li a:hover{
-    color: black;
-}
-.content .widget{
+/*.content .sidebar .sidebar-nav .main-menu li a:hover{*/
+/*    color: black;*/
+/*}*/
+.content .text-setting{
     padding: 15px;
 }
-.content .widget a{
+.content .text-setting:hover{
+    background-color: #6B6C6F;
+}
+.content .text-setting a{
     text-decoration: none;
     color: white;
 }

@@ -7,7 +7,6 @@
 <body>
 <div class="login">
     <div class="logo-login">
-        <img src="../image/logolev.png" alt="">
         <span>Vcleaning</span>
     </div>
     <div class="title">Chào mừng đến với hệ thống quản trị</div>
@@ -22,7 +21,7 @@
         <div class="item">
             <div class="title-input">Mật khẩu:</div>
             <div class="container-input">
-                <input type="password" placeholder="password" class="input-custom" name="password" required>
+                <input type="password" placeholder="Password" class="input-custom" name="password" required>
             </div>
         </div>
         <div class="btn-login">

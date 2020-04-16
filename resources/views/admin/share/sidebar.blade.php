@@ -38,7 +38,7 @@
                 <a href="{{route('admin.users.index')}}">Quản lý Khách Hàng</a>
             </li>
         </ul>
-        <div class="widget">
+        <div class="text-setting">
             <a href="">
                 <i class="fal fa-cogs"></i>
                 <span class="text-sidebar">Setting</span>

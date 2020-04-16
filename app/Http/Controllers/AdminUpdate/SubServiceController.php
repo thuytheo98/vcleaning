@@ -15,6 +15,7 @@ class SubServiceController extends Controller
     public $dirView = 'admin.service.';
 
     public function create(){
+
         $sv = Service::all();
         return view($this->dirView . 'add_sub')->with('service', $sv);
     }
@@ -29,6 +30,12 @@ class SubServiceController extends Controller
         $newSub->sv_id = $request->serviceName;
         $newSub->save();
         return redirect()->route("admin.services.index");
+
+    }
+    public function getDetailInfo($id){
+
+        $subInfo = Subservice::find($id);
+        return response()->json($subInfo);
 
     }
 

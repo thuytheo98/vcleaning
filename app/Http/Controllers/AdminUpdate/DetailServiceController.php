@@ -26,7 +26,6 @@ class DetailServiceController extends Controller
             'price' => 'numeric|required',
             'note' => 'nullable',
         ]);
-
         $detailSv = new DetailService();
         $detailSv->amount_of_work = $request->aow;
         $detailSv->price = $request->price;
@@ -34,12 +33,5 @@ class DetailServiceController extends Controller
         $detailSv->sv_id = $request->serviceName;
         $detailSv->save();
         return redirect()->route('admin.subservice.create');
-    }
-
-    public function getDetailInfo($id){
-
-        $detailInfo = DetailService::find($id);
-        return response()->json($detailInfo);
-
     }
 }

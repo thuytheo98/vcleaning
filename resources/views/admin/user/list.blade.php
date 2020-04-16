@@ -30,7 +30,7 @@
         </table>
     </div>
     <div id="ShowEditUser" style="display: none;">
-        <form action="" method="post" id="form-update-user">
+        <form action="" method="POST" id="form-update-user">
             @csrf
             <div class="item form-group">
                 <div class="title-input">Họ và tên</div>
@@ -101,7 +101,8 @@
             let name = fr.find('input[name="name"]').val();
             let email = fr.find('input[name="email"]').val();
             let phone = fr.find('input[name="phone"]').val();
-            let url = fr.attr('action');
+            let id = fr.find('input[name="id"]').val();
+            let url = 'ajax/user/update/'+ id;
             let type = fr.attr('method');
             let updateUser = $.ajax({
                url:url,
@@ -110,10 +111,11 @@
                    name:name,
                    email:email,
                    phone:phone,
+                   _token: '{{csrf_token()}}',
                },
                 dataType:'json',
                 success:function (response) {
-
+                    window.location.href = "{{route('admin.users.index')}}";
                 },
                 error: function (xhr, status) {
                     alert("Sorry, there was a problem!");

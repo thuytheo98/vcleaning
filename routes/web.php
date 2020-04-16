@@ -61,9 +61,10 @@ Route::prefix('admin')->group(function (){
         Route::prefix('ajax')->group(function (){
 
             Route::get('user/edit/{id}', 'UserController@showEditUser');
-            Route::post('user/update/{id}', 'AjaxController@updateUser')->name('admin.ajax.user.update');
 
-            Route::get('service/detailInfo/{id}', 'DetailServiceController@getDetailInfo');
+            Route::post('user/update/{id}', 'AjaxController@updateUser');
+
+            Route::get('service/detailInfo/{id}', 'AjaxController@getDetailInfo');
         });
     });
 });
@@ -84,7 +85,7 @@ Route::match(['get', 'post'], 'logout', 'Admin\AuthController@logout')->name('lo
 //    ]);
 
 
-Route::get('home', function (){
+Route::get('/', function (){
         return view('pages.index');
     })->name('index');
     Route::get('contact', function (){
