@@ -32,6 +32,6 @@ class DetailServiceController extends Controller
         $detailSv->note = $request->note;
         $detailSv->sv_id = $request->serviceName;
         $detailSv->save();
-        return redirect()->route('admin.subservice.create');
+        return redirect()->route('admin.services.subservice.create');
     }
 }

@@ -16,7 +16,7 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::guard('employees')->check() && Auth::guard('employees')->user()->role == 1) {
+        if (Auth::guard('employees')->check() && Auth::guard('employees')->user()) {
             return $next($request);
         } else {
             return redirect()->route('admin.login');

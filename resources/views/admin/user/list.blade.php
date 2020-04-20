@@ -30,6 +30,7 @@
         </table>
     </div>
     <div id="ShowEditUser" style="display: none;">
+        <div class="title-file">Chỉnh sửa thông tin khách hàng</div>
         <form action="" method="POST" id="form-update-user">
             @csrf
             <div class="item form-group">
@@ -77,10 +78,12 @@
                         'display': 'block',
                         'position':'absolute',
                         'top': position.top,
-                        'left':position.left,
                         'width':'500px',
-                        'height':'300px',
+                        'height':'400px',
                         'border':'1px solid black',
+                        'background' : 'black',
+                        'padding' : '20px',
+                        'color' : 'white',
                     });
                     $('#nameUser').val(response.name);
                     $('#emailUser').val(response.email);

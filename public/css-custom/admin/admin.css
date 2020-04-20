@@ -146,9 +146,8 @@ a{
     color: white;
     flex-direction: column;
 }
-.content .sidebar .logo-cus{
-    padding: 20px 10px;
-    margin-bottom: 20px;
+.content .sidebar .text-image-employee{
+    padding: 20px;
 }
 .content .sidebar .sidebar-nav .main-menu{
     list-style: none;

@@ -14,19 +14,25 @@ class VcerController extends Controller
     public $dirView = 'admin.vcers.';
 
     public  function index(){
+
         $vcers = Vcers::all();
         return view($this->dirView . 'list')->with('listVcer' , $vcers);
     }
+
     public function create(){
+
         return view($this->dirView . 'add');
     }
+
     public function store(VcerRequest $request){
+
             $addvcer = new Vcers();
             $addvcer->name = $request->name;
             $addvcer->identification = $request->cmnd;
             $addvcer->phone = $request->phone;
             $addvcer->address = $request->address;
             //images
+
             if($request->hasFile('image')){
                 $file = $request->file('image');
                 $name = $file->getClientOriginalName();
@@ -37,6 +43,7 @@ class VcerController extends Controller
             }else{
                 $addvcer->images = '';
             }
+
             $addvcer->age = $request->age;
             $addvcer->date = $request->date;
             $addvcer->time = $request->time;
@@ -44,17 +51,22 @@ class VcerController extends Controller
             $addvcer->save();
             return redirect()->route('admin.vcers.index')->with('success', 'Save image successful');
     }
+
     public function edit($id){
+
         $editVcer = Vcers::find($id);
         return view($this-> dirView . 'edit',compact('editVcer'));
     }
+
     public function update(VcerRequest $request, $id){
+
         $updateVcer = Vcers::find($id);
         $updateVcer->name = $request->name;
         $updateVcer->identification = $request->cmnd;
         $updateVcer->phone = $request->phone;
         $updateVcer->address = $request->address;
         //images
+
         if($request->hasFile('image')){
             $file = $request->file('image');
             $name = $file->getClientOriginalExtension();
@@ -63,6 +75,7 @@ class VcerController extends Controller
             $file->move($path, $imageName);
             $updateVcer->images = $imageName;
         }
+
         $updateVcer->age = $request->age;
         $updateVcer->date = $request->date;
         $updateVcer->time = $request->time;
@@ -70,7 +83,9 @@ class VcerController extends Controller
         $updateVcer->save();
         return redirect()->route('admin.vcers.index')->with('update', 'Update successful');
     }
+
     public function destroy($id){
+
         $deleteVcer = Vcers::find($id);
         $deleteVcer->delete();
         return redirect()->route('admin.vcers.index');

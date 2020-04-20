@@ -23,15 +23,18 @@ class ServiceController extends Controller
         return view($this->dirView . 'list',compact('services'))->with('detail', $detailSv)->with('sub', $subSv);
 
     }
+
     public function create(){
+
         return view($this->dirView . 'add');
     }
+
     public function store(Request $request){
         //validate
         $sv = new Service();
         $sv->sv_name = $request->serviceName;
         $sv->description = $request->description;
         $sv->save();
-        return redirect()->route('admin.services.create');
+        return redirect()->route('admin.services.detail.create');
     }
 }

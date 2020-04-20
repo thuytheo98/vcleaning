@@ -3,17 +3,34 @@
 
 @section('content')
     <div class="service">
-        <?php $i =1;
-        ?>
         <h3>Danh sánh nhóm dịch vụ</h3>
         <div class="list-service">
-            <select name="serviceName" id="serviceName" class="form-control" style="width: 30%">
-                <option >----Chọn dịch vụ----</option>
-                @foreach($services as $service)
-                    <option value="{{$service->sv_id}}">{{$service->sv_name}}</option>
-                @endforeach
-            </select>
-            <p style="color: #e4606d">Chọn dịch vụ và xem chi tiết</p>
+            <div class="text-box-list-service">
+                <div class="row">
+                    <div class="text-combobox-service col-4">
+                        <select name="serviceName" id="serviceName" class="form-control">
+                            <option >----Chọn dịch vụ----</option>
+                            @foreach($services as $service)
+                                <option value="{{$service->sv_id}}">{{$service->sv_name}}</option>
+                            @endforeach
+                        </select>
+                        <p style="color: #e4606d">Chọn dịch vụ và xem chi tiết</p>
+                    </div>
+                    <div class="list-btn-add-service col-8">
+                        <div class="row">
+                            <div class="col-4">
+                                <a href="{{route('admin.services.create')}}">Thêm dịch vụ mới</a>
+                            </div>
+                            <div class="col-4">
+                                <a href="{{route('admin.services.detail.create')}}">Thêm chi tiết dịch vụ</a>
+                            </div>
+                            <div class="col-4">
+                                <a href="{{route('admin.services.subservice.create')}}">Thêm dịch vụ kèm theo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <table id="detailSub" class="table table-striped table-bordered table-hover">
                 <tr>
                     <th>Khối lượng công việc</th>

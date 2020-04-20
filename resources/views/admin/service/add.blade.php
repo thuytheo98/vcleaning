@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="list-btn">
-                        <button type="button" class="btn btn-dark btn-lg">Reset</button>
+                    <button type="button" class="btn btn-dark btn-lg">Back</button>
                     <button type="submit" class="btn btn-primary btn-lg">ADD</button>
                 </div>
             </form>

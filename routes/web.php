@@ -26,14 +26,16 @@ Route::prefix('admin')->group(function (){
             'create' => 'admin.services.create',
             'store' => 'admin.services.store',
         ]);
-        Route::resource('detail', 'DetailServiceController')->names([
-            'create' => 'admin.detail.create',
-            'store' => 'admin.detail.store',
-        ]);
-        Route::resource('subservice', 'SubServiceController')->names([
-            'create' => 'admin.subservice.create',
-            'store' => 'admin.subservice.store',
-        ]);
+//        Route::prefix('services')->group(function (){
+            Route::resource('detail', 'DetailServiceController')->names([
+                'create' => 'admin.services.detail.create',
+                'store' => 'admin.detail.store',
+            ]);
+            Route::resource('subservice', 'SubServiceController')->names([
+                'create' => 'admin.services.subservice.create',
+                'store' => 'admin.subservice.store',
+            ]);
+//        });
         Route::resource('employees', 'EmployeeController')->names([
             'index' => 'admin.employees.index',
             'create' => 'admin.employees.create',
@@ -79,38 +81,42 @@ Route::match(['get', 'post'], 'login', 'Admin\AuthController@login')->name('logi
 
 Route::match(['get', 'post'], 'logout', 'Admin\AuthController@logout')->name('logout');
 
-//    Route::resource('users', 'Admin\UserController')->names([
-//        'index' => 'usr.users.index',
-//        'create' => 'usr.users.create'
-//    ]);
 
+    Route::get('/', function (){
 
-Route::get('/', function (){
         return view('pages.index');
     })->name('index');
+
     Route::get('contact', function (){
         return view('pages.contact');
     })->name('contact');
+
     Route::get('about', function (){
         return view('pages.about');
     })->name('about');
+
     Route::get('register', function (){
         return view('pages.register_vcer');
     })->name('vcer');
 
-        Route::middleware(['user.login'])->group(function (){
+    Route::middleware(['user.login'])->group(function (){
 
-        //chon service se nhary ra form dang ky service va cac buoc xac nhan den khi thanh toan
         Route::resource('services', 'Admin\ServiceController')->names([
             'index' => 'usr.service.index',
             'create' => 'usr.service.create'
         ]);
-        Route::resource('orders','Admin\OrderController')->names([
-            'index'=> 'usr.orders.index',
-            'create' => 'usr.orders.create',
-            'show' => 'usr.orders.show'
-        ]);
     });
+
+    Route::prefix('service')->group(function (){
+
+        Route::get('homecleaning', 'Admin\PageController@showHomeCleaning')->name('user.service.homecleaning');
+
+        Route::post('homecleaning', 'Admin\PageController@showHomeCleaning')->name('user.service.homecleaning');
+
+        Route::get('laundry', 'Admin\PageController@showLaundry')->name('user.service.laundry');
+
+    });
+
 Route::get('{locale}', function ($locale){
     Session::put('locale', $locale);//put locale vào session rồi middleware Localization sẽ kiểm tra và chạy locale đó =>vứt middleware đó vào middlewaregroup để duyệt qua mọi loại route
     return redirect()->back(); //quay về luôn trang vừa nãy vs locale

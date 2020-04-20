@@ -14,13 +14,18 @@ class EmployeeController extends Controller
     public $dirView = "admin.employee.";
 
     public function index(){
+
         $emps = Employee::all();
         return view($this->dirView . 'list_emp')->with("list_emp", $emps);
     }
+
     public function create(){
+
         return view($this->dirView . 'add_emp');
     }
+
     public function store(Request $request){
+
         $newEmp = new Employee();
         $request->validate([
             'name' => 'required|max:100',
@@ -42,18 +47,24 @@ class EmployeeController extends Controller
         $newEmp ->birthday = $request->birth;
         $newEmp ->email = $request->email;
         $newEmp ->username = $request->username;
+
         if($request->password == $request->re_password){
             $newEmp ->password = Hash::make($request->password);
         }
+
         $newEmp ->role = $request->role;
         $newEmp->save();
         return redirect()->route("admin.employees.index");
     }
+
     public function edit($id){
+
         $arrEmp = Employee::find($id);
         return view($this->dirView . 'edit_emp')->with("edit", $arrEmp);
     }
+
     public function update(Request $request,$id){
+
         $editEmp = Employee::find($id);
         $request->validate([
             'name' => 'required|max:100',
@@ -80,7 +91,9 @@ class EmployeeController extends Controller
         $editEmp->save();
         return redirect()->route("admin.employees.index");
     }
+
     public function destroy($id){
+
         $deleteEmp = Employee::find($id);
         $deleteEmp->delete();
         return redirect()->route('admin.employees.index');

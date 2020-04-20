@@ -1,7 +1,13 @@
 <div class="sidebar">
-    <div class="logo-cus">
-        <img src="" alt="">
-        <span>Tao là thúy quản lý ^^</span>
+    <div class="text-image-employee">
+        <div class="image">
+            <img src="#" alt="">
+        </div>
+        <div class="text-info">
+            <p class="text-info-name">Hi! My name is {{Auth::guard("employees")->user()->name}}</p>
+            <i class="fa fa-circle text-success"></i>
+            Online
+        </div>
     </div>
     <div class="sidebar-nav">
         <ul class="main-menu">
@@ -14,25 +20,25 @@
             <li class="{{(strpos(\Route::currentRouteName(), 'admin.vcers') !== false)? 'active' : ''}}">
                 <a href="{{route('admin.vcers.index')}}">Quản lý Vcer</a>
             </li>
-            <li class="{{(strpos(\Route::currentRouteName(), 'admin.employees') !== false)? 'active' : ''}}">
-                <a href="#menu-emp" data-toggle="collapse">
-                    <span class="text-sidebar">Quản lý Nhân Viên</span>
-                </a>
-                <ul id="menu-emp" class="collapse">
-                    <li><a href="{{route('admin.employees.index')}}">Danh sách Nhân Viên</a></li>
-                    <li><a href="{{route('admin.employees.create')}}">Thêm nhân viên</a></li>
-                </ul>
-            </li>
+
+            @if(Auth::guard("employees")->user()->role == '1')
+                <li class="{{(strpos(\Route::currentRouteName(), 'admin.employees') !== false)? 'active' : ''}}">
+                    <a href="{{route('admin.employees.index')}}">
+                        <span class="text-sidebar">Quản lý Nhân Viên</span>
+                    </a>
+                </li>
+            @endif
+
             <li class="{{(strpos(\Route::currentRouteName(), 'admin.services') !== false)? 'active' : ''}}">
-                <a href="#menu-service" data-toggle="collapse">
+                <a href="{{route('admin.services.index')}}">
                     <span class="text-sidebar">Quản lý Dịch Vụ</span>
                 </a>
-                <ul id="menu-service" class="collapse">
-                    <li><a href="{{route('admin.services.index')}}">Danh sách Dịch Vụ</a></li>
-                    <li><a href="{{route('admin.services.create')}}">Thêm mới dịch vụ</a></li>
-                    <li><a href="{{route('admin.detail.create')}}">Thêm chi tiết dịch vụ đã có</a></li>
-                    <li><a href="{{route('admin.subservice.create')}}">Thêm dịch vụ kèm theo</a></li>
-                </ul>
+{{--                <ul id="menu-service" class="collapse">--}}
+{{--                    <li><a href="">Danh sách Dịch Vụ</a></li>--}}
+{{--                    <li><a href="{{route('admin.services.create')}}">Thêm mới dịch vụ</a></li>--}}
+{{--                    <li><a href="{{route('admin.detail.create')}}">Thêm chi tiết dịch vụ đã có</a></li>--}}
+{{--                    <li><a href="{{route('admin.subservice.create')}}">Thêm dịch vụ kèm theo</a></li>--}}
+{{--                </ul>--}}
             </li>
             <li class="{{(strpos(\Route::currentRouteName(), 'admin.users') !== false)? 'active' : ''}}" >
                 <a href="{{route('admin.users.index')}}">Quản lý Khách Hàng</a>

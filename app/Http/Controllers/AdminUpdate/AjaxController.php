@@ -14,20 +14,17 @@ use Illuminate\Support\Facades\DB;
 
 class AjaxController extends Controller
 {
-    public function getDetailService($idService){
-        $detail = Detail_service::where('sv_id', $idService)->get();
-        if($detail){
-            foreach ($detail as $dl){
-                echo "<option value='".$dl->id."'>".$dl->amount_of_work ."</option>";
-            }
-        }
-    }
 
     public function getDetailInfo($id){
 
-        $ds = DB::table('detail_service')->join('subservice', 'detail_service.sv_id', '=', 'subservice.sv_id')->where('detail_service.sv_id', $id)->get();
-//        $detailInfo = DetailService::where('sv_id', $id)->get();
-//        $subInfo = Subservice::where('sv_id', $id)->get();
+        $ds = DB::table('detail_service')
+            ->join('subservice',
+                'detail_service.sv_id',
+                '=',
+                'subservice.sv_id')
+            ->where('detail_service.sv_id', $id)
+            ->get();
+
         return response()->json($ds);
 
     }

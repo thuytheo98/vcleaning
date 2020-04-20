@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-sm navbar-light justify-content-center" style="padding: 15px; border-bottom: 1px solid #b9bbbe; font-size: 20spx;font-weight: 600" >
+    <nav class="navbar navbar-expand-sm navbar-light justify-content-center" style="padding: 15px; border-bottom: 1px solid #b9bbbe; font-size: 20px;font-weight: 600" >
         <!-- Brand/logo -->
         <a class="navbar-brand" href="{{route('index')}}" style="margin: 0 50px; padding-right: 70px; font-size: 25px;">Vcleaning</a>
         <!-- Links -->

@@ -40,6 +40,7 @@ class AuthController extends Controller
                 if($authEmp){
                     return redirect()->route('admin.home.index');
                 }
+                return back()->withInput()->withErrors("login fail");
 
             }
 
