@@ -99,13 +99,13 @@ Route::match(['get', 'post'], 'logout', 'Admin\AuthController@logout')->name('lo
         return view('pages.register_vcer');
     })->name('vcer');
 
-    Route::middleware(['user.login'])->group(function (){
+//    Route::middleware(['user.login'])->group(function (){
 
         Route::resource('services', 'Admin\ServiceController')->names([
             'index' => 'usr.service.index',
             'create' => 'usr.service.create'
         ]);
-    });
+//    });
 
     Route::prefix('service')->group(function (){
 

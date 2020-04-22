@@ -2,21 +2,55 @@
 @section('title', 'Giới thiệu')
 
 @section('content')
-    <p style="margin-top: 10px;"><i>Trang chủ/Giới thiệu</i></p>
-    <div class="gioithieu">
-        <div class="title">
-            <h3>Giới thiệu về Vcleaning</h3>
-            <p>Công ty cổ phần phát triển dịch vụ nhà sạch HMC – Tên thương hiệu: JupViec.vn là công ty công nghệ cung cấp nền tảng kết nối nhu cầu giúp việc của Khách hàng và Người lao động. Thành lập năm 2012, JupViec.vn hiện đang tạo ra việc làm cho hơn 3.000 lao động giúp việc, đáp ứng nhu cầu của hơn 200.000 Khách hàng, phục vụ tại 8 tỉnh thành trên cả nước: Hà Nội, TP. Hồ Chí Minh, Đà Nẵng, Nha Trang, Hải Phòng, Quảng Ninh, Bình Dương, Bắc Ninh.</p>
-        </div>
-        <div class="main">
-            <h3>Sứ mệnh của chúng tôi: "Thay đổi cuộc sống phụ nữ Việt"</h3>
-            <p>Chúng tôi mong muốn tạo ra cuộc sống tốt đẹp hơn cho phụ nữ Việt, bao gồm cả những người phụ nữ thành thị hiện đại bận rộn và những người phụ nữ tại các làng quê Việt Nam.</p>
-            <p class="nghieng">- Phụ nữ nông thôn nghèo sẽ có công việc và thu nhập tốt.</p>
-            <p class="nghieng">- Phụ nữ thành thị sẽ có thêm thời gian rảnh rỗi chăm lo cho gia đình và tạo ra nhiều giá trị hơn cho xã hội.</p>
-            <h3>Sản phẩm</h3>
-            <p>Giúp việc nhà theo giờ: Giúp việc nhanh, Giúp việc định kỳ thường xuyên</p>
-            <h3>Công nghệ:</h3>
-            <p>Áp dụng công nghệ hiện đại thông qua ứng dụng kết nối giữa Khách hàng và Người giúp việc, giúp cho việc kết nối được mọi lúc mọi nơi, nhanh chóng, đồng thời quản lý chất lượng dịch vụ ở quy mô lớn.</p>
+    <div class="about-us">
+        <div class="text-about-us">
+            <div class="text-item">
+                <div class="text-item-title">
+                    <h3>Cuộc sống thảnh thơi hơn nhờ vCleaning</h3>
+                </div>
+                <div class="text-image-item-content">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="text-content">
+                        <p>
+                            Cuộc sống sẽ hạnh phúc hơn khi bạn có nhiều thời gian nghỉ ngơi,
+                            thư giãn và ở bên gia đình mà không phải lo lắng về công việc nhà.
+                            Ý tưởng về việc xây dựng một website giúp việc nhà nhanh chóng được hiện thực hóa và
+                            trở thành giải pháp tối ưu nhất hiện nay cho các gia đình khi cần người giúp việc đến dọn dẹp nhà.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-item">
+                <div class="text-item-title">
+                    <h3>Cung cấp đa dạng các loại dịch vụ</h3>
+                </div>
+                <div class="text-item-content">
+                    Không chỉ giúp bạn chăm sóc gia đình từ những dịch vụ Dọn dẹp nhà,
+                    Vệ sinh máy lạnh và Giặt ủi, bTaskee còn đang nỗ lực trở thành công ty hàng đầu Việt Nam
+                    cung cấp nhiều hơn những dịch vụ tiện ích gia đình tích hợp trên website.
+                </div>
+                <a href="#">
+                    <h4>Về các dịch vụ của vCleaning</h4>
+                    <p>Tìm hiểu thêm các thông tin về từng loại hình dịch vụ mà bạn mong muốn</p>
+                </a>
+            </div>
+            <div class="text-item">
+                <div class="text-item-title">
+                    <h3>Giá cả minh bạch</h3>
+                </div>
+                <div class="text-item-content">
+                    Giá dịch vụ sẽ được hiển thị chi tiết trên website. Bạn không phải trả thêm bất kì phí phát sinh nào.
+                    <p>Lưu ý:
+
+                        Nếu thời gian thực hiện công việc nhiều hơn 4 giờ, bạn nên đặt 2 người giúp việc bằng cách đăng việc 2 lần.
+                        Đối với Hà Nội và Hồ Chí Minh giá dịch vụ là 60,000vnd/h.
+                        Đối với Khung giờ cao điểm (trước 8h00 và sau 19h00) và Thứ 7, Chủ Nhật giá dịch vụ tăng 20%.
+                        Giá mang tính chất tham khảo ở thời điểm hiện tại. Giá dịch vụ có thể tự động điều chỉnh tùy vào khu vực, giờ cao điểm, lễ tết.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

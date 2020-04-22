@@ -6,7 +6,7 @@
         <div class="text-input-service">
             <div class="text-input-container">
                 <div class="text-input-content row">
-                    <div class="text-input-title col-6">
+                        <div class="text-input-title col-6">
                         <h3>Dịch vụ dọn dẹp nhà cửa</h3>
                         <p class="text-title">
                             Dịch vụ phun thuốc khử trùng, khử khuẩn với đội ngũ nhân viên kĩ thuật chuyên nghiệp,
@@ -163,6 +163,5 @@
                 console.log("Wait");
             }
         });
-        $('')
     </script>
     @endsection

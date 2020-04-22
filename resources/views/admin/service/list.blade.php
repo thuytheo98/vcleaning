@@ -18,13 +18,13 @@
                     </div>
                     <div class="list-btn-add-service col-8">
                         <div class="row">
-                            <div class="col-4">
-                                <a href="{{route('admin.services.create')}}">Thêm dịch vụ mới</a>
+                            <div class="create-vcer col-4">
+                                <a href="{{route('admin.services.create')}}" >Thêm dịch vụ mới</a>
                             </div>
-                            <div class="col-4">
+                            <div class="create-vcer col-4">
                                 <a href="{{route('admin.services.detail.create')}}">Thêm chi tiết dịch vụ</a>
                             </div>
-                            <div class="col-4">
+                            <div class="create-vcer col-4">
                                 <a href="{{route('admin.services.subservice.create')}}">Thêm dịch vụ kèm theo</a>
                             </div>
                         </div>

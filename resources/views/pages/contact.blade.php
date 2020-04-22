@@ -2,9 +2,45 @@
 @section('title', 'Liên hệ')
 
 @section('content')
-    <p style="margin-top: 10px; margin-left: 30px;"><i>Trang chủ/Liên hệ</i></p>
-
     <div class="contact">
+        <div class="text-input-contact">
+            <div class="text-title">
+                <h3>Liên hệ và phản hồi cho vCleaning</h3>
+            </div>
+            <div class="text-input-container">
+                <form action="">
+                    <div class="row">
+                        <div class="text-input-content col-7">
+                            <p>Gửi phản hồi</p>
+                            <div class="text-input-item form-group">
+                                <label>Họ và tên</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="text-input-item form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" >
+                            </div>
+                            <div class="text-input-item form-group">
+                                <label>Nội dung</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <button class="btn-support">Gửi</button>
+                        </div>
+                        <div class="text-info-contact">
+                            <p>Liên hệ</p>
+                            <div class="info-item">
+                                <label>Email</label>
+                                <p>support@vcleaning.com</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Hotline</label>
+                                <p>123.456.789</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="information">
             <h2 class="no-margin-top">Welcome!</h2>
             <p>Company is a technology company specialising in tech reviews.</p>

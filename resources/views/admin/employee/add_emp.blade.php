@@ -1,4 +1,6 @@
 @extends('admin.share.layout.master')
+@section('title', 'Admin - Employee')
+
 @section('content')
     <div class="add-employee">
         <div class="add-title">

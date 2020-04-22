@@ -5,6 +5,7 @@
         </div>
         <div class="text-info">
             <p class="text-info-name">Hi! My name is {{Auth::guard("employees")->user()->name}}</p>
+            <p class="text-info-name"> {{(Auth::guard("employees")->user()->role) == '2'?'Nhân viên' : 'Quản lý'}}</p>
             <i class="fa fa-circle text-success"></i>
             Online
         </div>

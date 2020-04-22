@@ -5,7 +5,7 @@
     <div class="edit-vcer">
         <h3>Chỉnh sửa thông tin nhân viên vcer</h3>
         <div class="main">
-            <form action="{{route('admin.vcers.update', $editVcer->id)}}" method="POST">
+            <form action="{{route('admin.vcers.update', $editVcer->id)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="input-text">
@@ -42,6 +42,7 @@
                         <input type="text" name="status" class="custom-input form-control" value="{{$editVcer->status}}" required>
                     </div>
                     <div class="list-btn">
+                        <button type="button" class="btn btn-primary">Quay lại</button>
                         <button type="submit" name="_method" value="delete" class="btn btn-dark">Xoá</button>
                         <button type="submit" class="btn btn-primary">Cập nhật</button>
                     </div>

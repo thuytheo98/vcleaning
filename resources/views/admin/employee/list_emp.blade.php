@@ -1,10 +1,15 @@
 @extends('admin.share.layout.master')
+@section('title', 'Employee')
+
 @section('content')
     <div class="list-emp">
         <div class="title-file">
             <h3 style="margin-top: 20px;">Danh sách nhân viên</h3>
         </div>
-        <table class="table table-striped table-bordered table-hover" style="margin: 0 20px; width: 90%">
+        <div class="create-vcer">
+            <a href="{{route('admin.employees.create')}}">Create employee</a>
+        </div>
+        <table class="table table-striped table-bordered table-hover" style="margin: 20px; width: 90%">
             <tr>
                 <th>STT</th>
                 <th>Họ Tên</th>

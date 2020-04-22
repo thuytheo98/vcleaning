@@ -36,7 +36,7 @@ class VcerController extends Controller
             if($request->hasFile('image')){
                 $file = $request->file('image');
                 $name = $file->getClientOriginalName();
-                $imageName = time()."_".$name;
+                $imageName = md5(time())."_".$name;
                 $path = public_path('/images/vcers');
                 $file->move($path, $imageName);
                 $addvcer->images = $imageName;
@@ -74,6 +74,8 @@ class VcerController extends Controller
             $path = public_path('/images/vcers');
             $file->move($path, $imageName);
             $updateVcer->images = $imageName;
+        }else{
+            $updateVcer->images = '';
         }
 
         $updateVcer->age = $request->age;

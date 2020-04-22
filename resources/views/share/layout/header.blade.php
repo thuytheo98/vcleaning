@@ -1,7 +1,7 @@
 <header>
-    <nav class="navbar navbar-expand-sm navbar-light justify-content-center" style="padding: 15px; border-bottom: 1px solid #b9bbbe; font-size: 20px;font-weight: 600" >
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top justify-content-center" style="padding: 15px; border-bottom: 1px solid #b9bbbe; font-size: 20px;font-weight: 600;background-color: white;" >
         <!-- Brand/logo -->
-        <a class="navbar-brand" href="{{route('index')}}" style="margin: 0 50px; padding-right: 70px; font-size: 25px;">Vcleaning</a>
+        <a class="navbar-brand" href="{{route('index')}}" style="margin: 0 50px; padding-right: 70px; font-size: 25px; color: #e4606d">Vcleaning</a>
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item" style="margin: 0 30px;">

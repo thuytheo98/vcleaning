@@ -9,8 +9,8 @@
             <div class="text-image-content">
                 <h1 class="text-image-title">
                     <span style="color:#858484;">Hãy để</span><br>
-                    <span style="color:#80bdff;">cuộc sống của bạn</span><br>
-                    <span style="color:#0062cc;">thảnh thơi hơn!</span>
+                    <span style="color:#ef8ba0;">cuộc sống của bạn</span><br>
+                    <span style="color:#e4606d;">thảnh thơi hơn!</span>
                 </h1>
                 <p class="text-image-description">
                     vCleaning là công ty tiên phong ứng dụng nền tảng công nghệ vào ngành giúp việc gia đình ở Việt Nam,
@@ -40,25 +40,30 @@
         <div class="text-image-reason">
             <div class="text-image-content">
                 <div class="text-image-item">
-                    <h3 style="color:#80bdff;">Đặt lịch nhanh chóng</h3>
-                    <p class="text-image-description">
-                        Thao tác 60 giây trên ứng dụng, có ngay người nhận việc sau 60 phút
-                    </p>
+                    <div class="image-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="text-description">
+                        <h3 style="color:#e4606d;">Đặt lịch nhanh chóng</h3>
+                        <p class="text-image-description">
+                            Thao tác 60 giây trên ứng dụng, có ngay người nhận việc sau 60 phút
+                        </p>
+                    </div>
                 </div>
                 <div class="text-image-item">
-                    <h3 style="color:#80bdff;">Giá cả rõ ràng</h3>
+                    <h3 style="color:#e4606d;">Giá cả rõ ràng</h3>
                     <p class="text-image-description">
                         Giá dịch vụ được hiển thị rõ ràng trên ứng dụng. Bạn không phải trả thêm bất kỳ khoản chi phí nào.
                     </p>
                 </div>
                 <div class="text-image-item">
-                    <h3 style="color:#80bdff;">Đa dạng dịch vụ</h3>
+                    <h3 style="color:#e4606d;">Đa dạng dịch vụ</h3>
                     <p class="text-image-description">
                         Bạn có thể đặt lịch dọn dẹp nhà bất cứ khi nào hoặc sử dụng. "Gói cố định" để đảm bảo luôn có người đến dọn dẹp nhà.
                     </p>
                 </div>
                 <div class="text-image-item">
-                    <h3 style="color:#80bdff;">An toàn tối đa</h3>
+                    <h3 style="color:#e4606d;">An toàn tối đa</h3>
                     <p class="text-image-description">
                         Đảm bảo quyền lợi khách hàng với gói Bảo hiểm dành riêng cho khách hàng lên đến 2 tỉ VND.
                     </p>
@@ -101,27 +106,6 @@
                 </p>
             </div>
             <div class="btn-info-service"><a href="#">Đặt ngay</a></div>
-        </div>
-    </div>
-</div>
-
-<div class="support row" style="">
-    <div class="text-support col-6">
-        <div class="text-image-support">
-            <div class="text-image-content">
-                <h1 class="text-image-title">
-                    Chúng tôi luôn sẵn sàng hỗ trợ bạn
-                </h1>
-                <p class="text-image-description">
-                    Khi có bất kỳ thắc mắc gì về dịch vụ, bạn chỉ cần chạm nhẹ, chúng tôi sẽ giải đáp cho bạn
-                </p>
-            </div>
-            <div class="btn-support"><a href="#">Trợ giúp ngay</a></div>
-        </div>
-    </div>
-    <div class="image-support col-6">
-        <div class="image-box">
-            <img src="{{asset('clientImages/chon-bTaskee-cho-cuoc-song-thanh-thoi-Support.jpg')}}" alt="">
         </div>
     </div>
 </div>

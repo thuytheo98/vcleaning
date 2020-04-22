@@ -5,7 +5,7 @@
             <h3>Chỉnh sửa thông tin nhân viên</h3>
         </div>
         <div class="form" style="display: flex; flex-direction: row; justify-content: center;" >
-            <form action="{{route('admin.employees.update', $edit->id)}}" method="POST">
+            <form action="{{route('admin.employees.update', $edit->id)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="create-info">
