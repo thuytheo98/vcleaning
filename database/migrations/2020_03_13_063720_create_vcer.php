@@ -13,17 +13,17 @@ class CreateVcer extends Migration
      */
     public function up()
     {
-        Schema::create('vcers', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name',50);
-            $table->string('identification', 50);
-            $table->string('address',128);
-            $table->string('phone',10);
-            $table->string('images',255)->nullable();
-            $table->integer('age');
-            $table->string('date')->comment("ngay lam")->nullable();
-            $table->string('time')->comment("thoi diem co the lam")->nullable();
-            $table->string('status')->comment('trang thai nhan vc');
+        Schema::create('vcer', function (Blueprint $table) {
+            $table->bigIncrements('VcerID');
+            $table->string('Vcername',50);
+            $table->string('Identification', 50);
+            $table->string('Address',128);
+            $table->string('Phone',10);
+            $table->integer('Age');
+            $table->string('Image',255)->nullable();
+            $table->string('Date')->comment("ngay lam")->nullable();
+            $table->string('Time')->comment("thoi diem co the lam")->nullable();
+            $table->string('Status')->comment('trang thai nhan vc')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -36,6 +36,6 @@ class CreateVcer extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vcers');
+        Schema::dropIfExists('vcer');
     }
 }

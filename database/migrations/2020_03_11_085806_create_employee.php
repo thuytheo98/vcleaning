@@ -14,14 +14,14 @@ class CreateEmployee extends Migration
     public function up()
     {
         Schema::create('employee', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name',100);
-            $table->string('phone',15);
-            $table->string('address',255);
-            $table->string('identification',50)->comment('CMND nhan vien');
-            $table->string('gender',50);
-            $table->date('birthday');
-            $table->string('email');
+            $table->bigIncrements('EmpID');
+            $table->string('EmpName',100);
+            $table->string('EmpPhone',15);
+            $table->string('EmpAddress',255);
+            $table->string('EmpIdentification',50)->comment('CMND nhan vien');
+            $table->string('EmpGender',50);
+            $table->date('EmpBirthday');
+            $table->string('EmpEmail');
             $table->string('username')->comment('ten tai khoan');
             $table->string('password');
             $table->integer('role')->comment('quyen truy cap');

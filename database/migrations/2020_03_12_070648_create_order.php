@@ -14,19 +14,19 @@ class CreateOrder extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('address', 255);
-            $table->string('payment',100)->comment('phuong thuc thanh toan');
-            $table->date('date')->comment('ngay lap don');
+            $table->bigIncrements('OrderID');
+            $table->string('OrderAddress', 255);
+            $table->string('Payment',100);
+            $table->date('Date')->comment('ngay lap don');
             $table->date('start_time')->comment('ngay gio bat dau');
             $table->date('end_time')->comment('ngay gio ket thuc');
             $table->string('repeat',255)->comment('lap lai hang tuan');
             $table->double('total')->nullable();
             $table->integer('status');
             $table->integer('user_id');
-            $table->integer('sv_id');
-            $table->integer('emp_id');
-            $table->integer('vcer_id');
+            $table->integer('ServiceID');
+            $table->integer('EmpID');
+            $table->integer('VcerID');
             $table->timestamps();
             $table->softDeletes();
         });

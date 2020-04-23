@@ -62,7 +62,7 @@ Route::prefix('admin')->group(function (){
         ]);
         Route::prefix('ajax')->group(function (){
 
-            Route::get('user/edit/{id}', 'UserController@showEditUser');
+            Route::get('user/edit/{id}', 'AjaxController@showEditUser');
 
             Route::post('user/update/{id}', 'AjaxController@updateUser');
 

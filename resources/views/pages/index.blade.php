@@ -109,4 +109,25 @@
         </div>
     </div>
 </div>
+<div class="support row" style="">
+    <div class="text-support col-6">
+        <div class="text-image-support">
+            <div class="text-image-content">
+                <h2 class="text-image-title">
+                    Chúng tôi luôn sẵn sàng hỗ trợ bạn
+                </h2>
+                <p class="text-image-description">
+                    Khi có bất kỳ thắc mắc gì về dịch vụ, bạn chỉ cần chạm nhẹ, chúng tôi sẽ giải đáp cho bạn
+                </p>
+            </div>
+            <div class="btn-support"><a href="#">Trợ giúp ngay</a></div>
+        </div>
+    </div>
+    <div class="image-support col-6">
+        <div class="image-box">
+            <img src="{{asset('clientImages/chon-bTaskee-cho-cuoc-song-thanh-thoi-Support.jpg')}}" alt="">
+        </div>
+    </div>
+</div>
+
 @endsection

@@ -14,11 +14,11 @@ class CreateDetailService extends Migration
     public function up()
     {
         Schema::create('detail_service', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string("amount_of_work")->comment('khoi luong cvc');
-            $table->double('price');
-            $table->string('note')->comment('chu thich');
-            $table->integer('sv_id');
+            $table->bigIncrements('DetailServiceID');
+            $table->string("AmountOfWork");
+            $table->double('DetailServicePrice');
+            $table->string('DetailDescription');
+            $table->integer('ServiceID');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateService extends Migration
+class CreateAccountEmployee extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateService extends Migration
      */
     public function up()
     {
-        Schema::create('service', function (Blueprint $table) {
-            $table->bigIncrements('ServiceID');
-            $table->string('ServiceName', 100);
-            $table->string('ServiceImage', 100);
-            $table->string('ServiceDescription', 100);
-            $table->integer('ServiceNew');
+        Schema::create('account_employee', function (Blueprint $table) {
+            $table->bigIncrements('AccountEmpID');
+            $table->string('Username');
+            $table->string('Password');
+            $table->integer('Role');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +30,6 @@ class CreateService extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service');
+        Schema::dropIfExists('account_employee');
     }
 }
