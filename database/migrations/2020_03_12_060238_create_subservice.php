@@ -13,13 +13,12 @@ class CreateSubservice extends Migration
      */
     public function up()
     {
-        Schema::create('subservice', function (Blueprint $table) {
-            $table->bigIncrements('SubServiceID');
-            $table->string('SubServiceName');
-            $table->string('SubServiceDescription')->nullable();
-            $table->double('SubServicePrice');
-            $table->integer('ServiceID');
-            $table->integer('DetailServiceID');
+        Schema::create('sub_service', function (Blueprint $table) {
+            $table->bigIncrements('sub_id');
+            $table->string('sub_name');
+            $table->string('sub_des')->nullable();
+            $table->double('sub_price');
+            $table->integer('service_id');
             $table ->softDeletes();
             $table->timestamps();
         });

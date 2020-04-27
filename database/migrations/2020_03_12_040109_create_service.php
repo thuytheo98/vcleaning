@@ -14,11 +14,11 @@ class CreateService extends Migration
     public function up()
     {
         Schema::create('service', function (Blueprint $table) {
-            $table->bigIncrements('ServiceID');
-            $table->string('ServiceName', 100);
-            $table->string('ServiceImage', 100);
-            $table->string('ServiceDescription', 100);
-            $table->integer('ServiceNew');
+            $table->bigIncrements('service_id');
+            $table->string('service_name', 100);
+            $table->string('service_image', 1000);
+            $table->string('service_des', 100);
+            $table->integer('service_new');
             $table->timestamps();
             $table->softDeletes();
         });

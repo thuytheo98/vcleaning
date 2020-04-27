@@ -14,19 +14,19 @@ class CreateOrder extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->bigIncrements('OrderID');
-            $table->string('OrderAddress', 255);
-            $table->string('Payment',100);
-            $table->date('Date')->comment('ngay lap don');
-            $table->date('start_time')->comment('ngay gio bat dau');
-            $table->date('end_time')->comment('ngay gio ket thuc');
-            $table->string('repeat',255)->comment('lap lai hang tuan');
-            $table->double('total')->nullable();
-            $table->integer('status');
-            $table->integer('user_id');
-            $table->integer('ServiceID');
-            $table->integer('EmpID');
-            $table->integer('VcerID');
+            $table->bigIncrements('order_id');
+            $table->string('order_address', 255);
+            $table->string('order_payment',100);
+            $table->date('order_date')->comment('ngay lap don');
+            $table->date('order_start_time')->comment('ngay gio bat dau');
+            $table->date('order_end_time')->comment('ngay gio ket thuc');
+            $table->string('order_repeat',255)->comment('lap lai hang tuan');
+            $table->double('order_total');
+            $table->integer('order_status')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->integer('service_id')->nullable();
+            $table->integer('emp_id')->nullable();
+            $table->integer('vcer_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

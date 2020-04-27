@@ -14,16 +14,16 @@ class CreateVcer extends Migration
     public function up()
     {
         Schema::create('vcer', function (Blueprint $table) {
-            $table->bigIncrements('VcerID');
-            $table->string('Vcername',50);
-            $table->string('Identification', 50);
-            $table->string('Address',128);
-            $table->string('Phone',10);
-            $table->integer('Age');
-            $table->string('Image',255)->nullable();
-            $table->string('Date')->comment("ngay lam")->nullable();
-            $table->string('Time')->comment("thoi diem co the lam")->nullable();
-            $table->string('Status')->comment('trang thai nhan vc')->nullable();
+            $table->bigIncrements('vcer_id');
+            $table->string('vcer_name',50);
+            $table->string('vcer_identification', 50);
+            $table->string('vcer_address',128);
+            $table->string('vcer_phone',10);
+            $table->integer('vcer_age');
+            $table->string('vcer_image',255)->nullable();
+            $table->string('vcer_date')->comment("ngay lam")->nullable();
+            $table->string('vcer_time')->comment("thoi diem co the lam")->nullable();
+            $table->string('vcer_experience')->comment('kinh nghiem')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

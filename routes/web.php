@@ -21,22 +21,27 @@ Route::prefix('admin')->group(function (){
 
         Route::get('index', 'HomeController@index')->name('admin.home.index');
 
-        Route::resource('services', 'ServiceController')->names([
+        Route::resource('services', 'ServiceController')
+            ->names([
             'index' => 'admin.services.index',
             'create' => 'admin.services.create',
             'store' => 'admin.services.store',
         ]);
 //        Route::prefix('services')->group(function (){
-            Route::resource('detail', 'DetailServiceController')->names([
+            Route::resource('detail', 'DetailServiceController')
+                ->names([
                 'create' => 'admin.services.detail.create',
                 'store' => 'admin.detail.store',
             ]);
-            Route::resource('subservice', 'SubServiceController')->names([
+
+            Route::resource('subservice', 'SubServiceController')
+                ->names([
                 'create' => 'admin.services.subservice.create',
                 'store' => 'admin.subservice.store',
             ]);
 //        });
-        Route::resource('employees', 'EmployeeController')->names([
+        Route::resource('employees', 'EmployeeController')
+            ->names([
             'index' => 'admin.employees.index',
             'create' => 'admin.employees.create',
             'store' => 'admin.employees.store',
@@ -44,10 +49,14 @@ Route::prefix('admin')->group(function (){
             'update' => 'admin.employees.update',
             'destroy' => 'admin.employees.destroy',
         ]);
-        Route::resource('users', 'UserController')->names([
+
+        Route::resource('users', 'UserController')
+            ->names([
             'index' => 'admin.users.index',
         ]);
-        Route::resource('vcers', 'VcerController')->names([
+
+        Route::resource('vcers', 'VcerController')
+            ->names([
             'index' => 'admin.vcers.index',
             'create' => 'admin.vcers.create',
             'store' => 'admin.vcers.store',
@@ -55,11 +64,13 @@ Route::prefix('admin')->group(function (){
             'update' => 'admin.vcers.update',
             'destroy' => 'admin.vcers.destroy',
         ]);
+
         Route::resource('orders', 'OrderController')->names([
             'index' => 'admin.orders.index',
             'show' => 'admin.orders.show',
             'store' => 'admin.orders.store',
         ]);
+
         Route::prefix('ajax')->group(function (){
 
             Route::get('user/edit/{id}', 'AjaxController@showEditUser');

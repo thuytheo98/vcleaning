@@ -14,10 +14,10 @@ class CreateAccountEmployee extends Migration
     public function up()
     {
         Schema::create('account_employee', function (Blueprint $table) {
-            $table->bigIncrements('AccountEmpID');
-            $table->string('Username');
-            $table->string('Password');
-            $table->integer('Role');
+            $table->bigIncrements('account_emp_id');
+            $table->string('account_name');
+            $table->string('account_password');
+            $table->integer('account_role');
             $table->timestamps();
             $table->softDeletes();
         });
