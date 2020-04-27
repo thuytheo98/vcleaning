@@ -27,15 +27,15 @@
             @foreach($listVcer as $vcer)
             <tr>
                 <td><?php echo $i++?></td>
-                <td>{{$vcer->name}}</td>
-                <td>{{$vcer->identification}}</td>
-                <td>{{$vcer->address}}</td>
-                <td>{{$vcer->phone}}</td>
-                <td>{{$vcer->age}}</td>
-                <td>{{$vcer->date}}</td>
-                <td>{{$vcer->time}}</td>
-                <td>{{$vcer->status}}</td>
-                <td><a href="{{route('admin.vcers.edit',$vcer->id)}}">Edit</a></td>
+                <td>{{$vcer->vcer_name}}</td>
+                <td>{{$vcer->vcer_identification}}</td>
+                <td>{{$vcer->vcer_address}}</td>
+                <td>{{$vcer->vcer_phone}}</td>
+                <td>{{$vcer->vcer_age}}</td>
+                <td>{{$vcer->vcer_date}}</td>
+                <td>{{$vcer->vcer_time}}</td>
+                <td>{{$vcer->vcer_experience}}</td>
+                <td><a href="{{route('admin.vcers.edit',$vcer->vcer_id)}}">Edit</a></td>
             </tr>
                 @endforeach
         </table>

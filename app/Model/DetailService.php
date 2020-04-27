@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class DetailService extends Model
 {
     public $table = 'detail_service';
-    public $primaryKey = 'id';
-    public $fillable = ['amount_of_work', 'price', 'note', 'sv_id'];
+    public $primaryKey = 'detail_id';
+    public $fillable = ['detail_amount', 'detail_price', 'detail_des', 'service_id'];
 }

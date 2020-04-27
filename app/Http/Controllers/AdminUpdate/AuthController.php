@@ -24,15 +24,17 @@ class AuthController extends Controller
 
             $name = $request['name'];
             $password = $request['password'];
+
             $auth = Auth::guard('employees')->attempt([
-                'username'=>$name,
-                'password'=>$password,
-                'role' => '1'
+                'emp_username'=> $name,
+                'password'=> $password,
+                'emp_role' => '1'
             ]);
+
             $authEmp = Auth::guard('employees')->attempt([
-                'username'=>$name,
-                'password'=>$password,
-                'role' => '2'
+                'emp_username'=> $name,
+                'password'=> $password,
+                'emp_role' => '2'
             ]);
 
             if(!$auth){

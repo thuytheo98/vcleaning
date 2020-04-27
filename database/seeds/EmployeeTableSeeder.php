@@ -12,8 +12,16 @@ class EmployeeTableSeeder extends Seeder
     public function run()
     {
         $data = [
-            'name' =>'thuy', 'address'=>'HN', 'identification'=>'124342','phone'=>'32443',
-            'gender'=>'nu', 'birthday'=> '2020-03-12', 'email'=>'thuytheo34@gmail.com', 'username'=>'ha', 'password'=> \Illuminate\Support\Facades\Hash::make('1234'),'role'=>'1'
+            'emp_name' =>'Lee Ha',
+            'emp_address'=>'HN',
+            'emp_identification'=>'124342',
+            'emp_phone'=>'32443',
+            'emp_gender'=>'nu',
+            'emp_birthday'=> '2020-03-12',
+            'emp_email'=>'thuytheo34@gmail.com',
+            'emp_username'=>'ha',
+            'emp_password'=> \Illuminate\Support\Facades\Hash::make('1234'),
+            'emp_role'=>'1'
         ];
         \App\Model\Employee::create($data);
     }

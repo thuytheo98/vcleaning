@@ -27,17 +27,17 @@
             @foreach($list_emp as $emp)
             <tr>
                 <td>{{$i++}}</td>
-                <td>{{$emp->name}}</td>
-                <td>{{$emp->address}}</td>
-                <td>{{$emp->birthday}}</td>
-                <td>{{($emp->gender =="1")? "Nữ" : "Nam"}} </td>
-                <td>{{$emp->email}}</td>
-                <td>{{$emp->phone}}</td>
-                <td>{{$emp->identification}}</td>
-                <td>{{$emp->username}}</td>
-                <td>{{($emp->role =="1")? "Quản lý" : "Nhân viên"}}</td>
+                <td>{{$emp->emp_name}}</td>
+                <td>{{$emp->emp_address}}</td>
+                <td>{{$emp->emp_birthday}}</td>
+                <td>{{($emp->emp_gender =="1")? "Nữ" : "Nam"}} </td>
+                <td>{{$emp->emp_email}}</td>
+                <td>{{$emp->emp_phone}}</td>
+                <td>{{$emp->emp_identification}}</td>
+                <td>{{$emp->emp_username}}</td>
+                <td>{{($emp->emp_role =="1")? "Quản lý" : "Nhân viên"}}</td>
                 <td class="edit">
-                    <a href="{{route('admin.employees.edit', $emp->id)}}">Edit</a>
+                    <a href="{{route('admin.employees.edit', $emp->emp_id)}}">Edit</a>
                 </td>
             </tr>
             @endforeach

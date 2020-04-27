@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     public $table = 'order';
-    public $primaryKey = 'id';
-    public $fillable = ['address', 'payment', 'date', 'start_time', 'end_time', 'repeat', 'total', 'status', 'user_id', 'emp_id', 'sv_id', 'vcer_id'];
+    public $primaryKey = 'order_id';
+    public $fillable = ['order_address', 'order_payment', 'order_date', 'order_start_time', 'order_end_time', 'order_repeat', 'order_total', 'order_status', 'user_id', 'service_id', 'emp_id', 'vcer_id'];
 }

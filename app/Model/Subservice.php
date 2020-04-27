@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subservice extends Model
 {
-    public $table = 'subservice';
-    public $primaryKey = 'id';
-    public  $fillable = ['name', 'description' , 'price', 'sv_id', 'detail_sv_id'];
+    public $table = 'sub_service';
+    public $primaryKey = 'sub_id';
+    public  $fillable = ['sub_name', 'sub_des' , 'sub_price', 'service_id'];
 }

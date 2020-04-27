@@ -4,8 +4,8 @@
             <img src="#" alt="">
         </div>
         <div class="text-info">
-            <p class="text-info-name">Hi! My name is {{Auth::guard("employees")->user()->name}}</p>
-            <p class="text-info-name"> {{(Auth::guard("employees")->user()->role) == '2'?'Nhân viên' : 'Quản lý'}}</p>
+            <p class="text-info-name">Hi! My name is {{Auth::guard("employees")->user()->emp_name}}</p>
+            <p class="text-info-name"> {{(Auth::guard("employees")->user()->emp_role) == '2'?'Nhân viên' : 'Quản lý'}}</p>
             <i class="fa fa-circle text-success"></i>
             Online
         </div>
@@ -22,7 +22,7 @@
                 <a href="{{route('admin.vcers.index')}}">Quản lý Vcer</a>
             </li>
 
-            @if(Auth::guard("employees")->user()->role == '1')
+            @if(Auth::guard("employees")->user()->emp_role == '1')
                 <li class="{{(strpos(\Route::currentRouteName(), 'admin.employees') !== false)? 'active' : ''}}">
                     <a href="{{route('admin.employees.index')}}">
                         <span class="text-sidebar">Quản lý Nhân Viên</span>

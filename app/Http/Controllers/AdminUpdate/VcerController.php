@@ -27,10 +27,10 @@ class VcerController extends Controller
     public function store(VcerRequest $request){
 
             $addvcer = new Vcers();
-            $addvcer->name = $request->name;
-            $addvcer->identification = $request->cmnd;
-            $addvcer->phone = $request->phone;
-            $addvcer->address = $request->address;
+            $addvcer->vcer_name = $request->name;
+            $addvcer->vcer_identification = $request->cmnd;
+            $addvcer->vcer_phone = $request->phone;
+            $addvcer->vcer_address = $request->address;
             //images
 
             if($request->hasFile('image')){
@@ -39,15 +39,15 @@ class VcerController extends Controller
                 $imageName = md5(time())."_".$name;
                 $path = public_path('/images/vcers');
                 $file->move($path, $imageName);
-                $addvcer->images = $imageName;
+                $addvcer->vcer_image = $imageName;
             }else{
-                $addvcer->images = '';
+                $addvcer->vcer_image = '';
             }
 
-            $addvcer->age = $request->age;
-            $addvcer->date = $request->date;
-            $addvcer->time = $request->time;
-            $addvcer->status = $request->status;
+            $addvcer->vcer_age = $request->age;
+            $addvcer->vcer_date = $request->date;
+            $addvcer->vcer_time = $request->time;
+            $addvcer->vcer_experience = $request->status;
             $addvcer->save();
             return redirect()->route('admin.vcers.index')->with('success', 'Save image successful');
     }

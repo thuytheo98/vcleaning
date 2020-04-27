@@ -12,8 +12,10 @@ class ServicesTableSeeder extends Seeder
     public function run()
     {
         $data = [
-            'sv_name' => 'Tổng vệ sinh',
-            'description'=>'dọn dẹp sạc sẽ theo dúng số tiếng b đã đăng ký dọn dẹp. hãy yêu cầu những vị trí cần dọn dẹp cho chúng tôi để công việc đk dẽ dàng và nhanh nhát có thể',
+            'service_name' => 'Tổng vệ sinh',
+            'service_image' => '',
+            'service_new' => '1',
+            'service_des'=>'dọn dẹp sạc sẽ theo dúng số tiếng b đã đăng ký dọn dẹp. hãy yêu cầu những vị trí cần dọn dẹp cho chúng tôi để công việc đk dẽ dàng và nhanh nhát có thể',
         ];
         \App\Model\Service::create($data);
     }

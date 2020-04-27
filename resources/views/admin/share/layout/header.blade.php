@@ -16,7 +16,7 @@
             </li>
             <li class="dropdown">
                 <a href="#" data-toggle="dropdown">
-                    <div class="employee-login">{{Auth::guard("employees")->user()->name}}</div>
+                    <div class="employee-login">{{Auth::guard("employees")->user()->emp_username}}</div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
                     <li class="dropdown-item"><a href="#">Profile</a></li>

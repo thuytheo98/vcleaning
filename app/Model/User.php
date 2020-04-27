@@ -11,8 +11,8 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
-    public $table = 'users';
-    public $primaryKey = 'id';
-    public $fillable = ['name', 'password', 'email', 'phone', 'remember_token'];
+    public $table = 'user';
+    public $primaryKey = 'user_id';
+    public $fillable = ['user_name', 'user_password', 'user_email', 'remember_token'];
     public $timestamps = true;
 }

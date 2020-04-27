@@ -12,16 +12,16 @@ class UsersTableSeeder extends Seeder
     {
         //data k dk tao nen d check dk
         $data = [
-            'name' => 'ha',
-            'password' => \Illuminate\Support\Facades\Hash::make('1234'),
-            'email' => 'ha@ominext.com'
+            'user_name' => 'ha',
+            'user_password' => \Illuminate\Support\Facades\Hash::make('1234'),
+            'user_email' => 'ha@ominext.com'
         ];
         \App\Model\User::create($data);
 
-        DB::table('users')->insert([
-            'name' => 'thuy',
-            'email' => 'thuytheo20101998@gmail.com',
-            'password' => Hash::make('1234'),
+        DB::table('user')->insert([
+            'user_name' => 'thuy',
+            'user_email' => 'thuytheo20101998@gmail.com',
+            'user_password' => Hash::make('1234'),
         ]);
     }
 }

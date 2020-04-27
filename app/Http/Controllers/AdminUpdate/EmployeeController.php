@@ -39,20 +39,20 @@ class EmployeeController extends Controller
             "username" => 'required|max:100',
             'password' => 'required',
         ]);
-        $newEmp ->name = $request->name;
-        $newEmp ->phone = $request->phone;
-        $newEmp ->address = $request->address;
-        $newEmp ->gender = $request->gender;
-        $newEmp ->identification = $request->cmnd;
-        $newEmp ->birthday = $request->birth;
-        $newEmp ->email = $request->email;
-        $newEmp ->username = $request->username;
+        $newEmp ->emp_name = $request->name;
+        $newEmp ->emp_phone = $request->phone;
+        $newEmp ->emp_address = $request->address;
+        $newEmp ->emp_gender = $request->gender;
+        $newEmp ->emp_identification = $request->cmnd;
+        $newEmp ->emp_birthday = $request->birth;
+        $newEmp ->emp_email = $request->email;
+        $newEmp ->emp_username = $request->username;
 
         if($request->password == $request->re_password){
-            $newEmp ->password = Hash::make($request->password);
+            $newEmp ->emp_password = Hash::make($request->password);
         }
 
-        $newEmp ->role = $request->role;
+        $newEmp ->emp_role = $request->role;
         $newEmp->save();
         return redirect()->route("admin.employees.index");
     }
@@ -78,16 +78,16 @@ class EmployeeController extends Controller
             "username" => 'required|max:100',
             'password' => 'required',
         ]);
-        $editEmp ->name = $request->name;
-        $editEmp ->phone = $request->phone;
-        $editEmp ->address = $request->address;
-        $editEmp ->gender = $request->gender;
-        $editEmp ->identification = $request->cmnd;
-        $editEmp ->birthday = $request->birth;
-        $editEmp ->email = $request->email;
-        $editEmp ->username = $request->username;
-        $editEmp ->password = $request->password;
-        $editEmp ->role = $request->role;
+        $editEmp ->emp_name = $request->name;
+        $editEmp ->emp_phone = $request->phone;
+        $editEmp ->emp_address = $request->address;
+        $editEmp ->emp_gender = $request->gender;
+        $editEmp ->emp_identification = $request->cmnd;
+        $editEmp ->emp_birthday = $request->birth;
+        $editEmp ->emp_email = $request->email;
+        $editEmp ->emp_username = $request->username;
+        $editEmp ->emp_password = $request->password;
+        $editEmp ->emp_role = $request->role;
         $editEmp->save();
         return redirect()->route("admin.employees.index");
     }
