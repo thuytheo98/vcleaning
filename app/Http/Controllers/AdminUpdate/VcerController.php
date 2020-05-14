@@ -61,10 +61,10 @@ class VcerController extends Controller
     public function update(VcerRequest $request, $id){
 
         $updateVcer = Vcers::find($id);
-        $updateVcer->name = $request->name;
-        $updateVcer->identification = $request->cmnd;
-        $updateVcer->phone = $request->phone;
-        $updateVcer->address = $request->address;
+        $updateVcer->vcer_name = $request->name;
+        $updateVcer->vcer_identification = $request->cmnd;
+        $updateVcer->vcer_phone = $request->phone;
+        $updateVcer->vcer_address = $request->address;
         //images
 
         if($request->hasFile('image')){
@@ -73,15 +73,15 @@ class VcerController extends Controller
             $imageName = md5(time())."_".$name;
             $path = public_path('/images/vcers');
             $file->move($path, $imageName);
-            $updateVcer->images = $imageName;
+            $updateVcer->vcer_image = $imageName;
         }else{
-            $updateVcer->images = '';
+            $updateVcer->vcer_image = '';
         }
 
-        $updateVcer->age = $request->age;
-        $updateVcer->date = $request->date;
-        $updateVcer->time = $request->time;
-        $updateVcer->status = $request->status;
+        $updateVcer->vcer_age = $request->age;
+        $updateVcer->vcer_date = $request->date;
+        $updateVcer->vcer_time = $request->time;
+        $updateVcer->vcer_experience = $request->status;
         $updateVcer->save();
         return redirect()->route('admin.vcers.index')->with('update', 'Update successful');
     }

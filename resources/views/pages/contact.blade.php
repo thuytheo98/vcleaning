@@ -2,6 +2,7 @@
 @section('title', 'Liên hệ')
 
 @section('content')
+    {{Form::open()}}
     <div class="contact">
         <div class="text-input-contact">
             <div class="text-title">

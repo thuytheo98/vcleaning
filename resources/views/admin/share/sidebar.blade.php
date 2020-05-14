@@ -22,13 +22,13 @@
                 <a href="{{route('admin.vcers.index')}}">Quản lý Vcer</a>
             </li>
 
-            @if(Auth::guard("employees")->user()->emp_role == '1')
+{{--            @if(Auth::guard("employees")->user()->emp_role == '1')--}}
                 <li class="{{(strpos(\Route::currentRouteName(), 'admin.employees') !== false)? 'active' : ''}}">
                     <a href="{{route('admin.employees.index')}}">
                         <span class="text-sidebar">Quản lý Nhân Viên</span>
                     </a>
                 </li>
-            @endif
+{{--            @endif--}}
 
             <li class="{{(strpos(\Route::currentRouteName(), 'admin.services') !== false)? 'active' : ''}}">
                 <a href="{{route('admin.services.index')}}">

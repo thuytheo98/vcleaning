@@ -98,4 +98,18 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        document.querySelector('input[type="file"]').addEventListener('change', function () {
+            var file = this.files;
+            var imagename = file[0];
+            //tao file reader
+            var fileReader = new FileReader();
+            fileReader.onload = function () {
+                var url = fileReader.result;
+                var output = document.getElementById('output');
+                output.src = url;
+            }
+            fileReader.readAsDataURL(imagename);
+        });
+    </script>
     @endsection

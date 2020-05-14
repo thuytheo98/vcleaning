@@ -23,9 +23,6 @@
                     <li class="dropdown-item"><a href="{{ route('locale', 'vi') }}">Tiếng Việt</a></li>
                 </ul>
             </li>
-            <li class="nav-item" style="margin: 0 20px;">
-                <a class="nav-link {{\Auth::check()? 'oke' : ''}}" href="{{route('login')}}">{{trans_choice('messages.header.login', [Auth::user()])}}</a>
-            </li>
         </ul>
     </nav>
 </header>
