@@ -1,44 +1,59 @@
 <?php
 
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\AdminUpdate;
 
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Model\Employee;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public $dirView = 'auth.';
+    public  $dirView = 'admin.auth.';
+
     public function login(Request $request){
-//        App::setLocale('en');
-        if(Auth::check()){
-            return redirect()->route('index');
+
+        if(Auth::guard('employees')->check()){
+            return redirect()->route('admin.home.index');
         }
+
         if($request->isMethod('post')){
-            $request->validate([
-                'email' => 'required|max:50',
-                'password' => 'required|max:64'
+
+            $name = $request['name'];
+            $password = $request['password'];
+            $auth = Auth::guard('employees')->attempt([
+                'username'=>$name,
+                'password'=>$password,
+                'role' => '1'
             ]);
-            $dataLogin = [
-                'email' => $request['email'],
-                'password' => $request['password']
-            ];
-            $auth = Auth::attempt($dataLogin, false);
-            if (!$auth){
+            $authEmp = Auth::guard('employees')->attempt([
+                'username'=>$name,
+                'password'=>$password,
+                'role' => '2'
+            ]);
+
+            if(!$auth){
+
+                if($authEmp){
+                    return redirect()->route('admin.home.index');
+                }
                 return back()->withInput()->withErrors("login fail");
+
             }
-            return redirect()->route('index');
+
+            return redirect()->route('admin.home.index');
         }
-        return view($this->dirView . 'login');
+
+        return view($this->dirView . 'signin');
     }
 
     public function logout(){
-        Auth::logout();
-        return redirect()->route('login');
+
+        Auth::guard('employees')->logout();
+        return redirect()->route('admin.login');
     }
+
 }

@@ -16,17 +16,31 @@ class AjaxController extends Controller
 {
 
     public function getDetailInfo($id){
+        $detail = DetailService::where('sv_id', $id)->get()->toArray();
+        foreach($detail as $item){
+            echo"
+            <tr>
+                <td>{$item['amount_of_work']}</td>
+                <td>{$item['price']}</td>
+                <td>{$item['note']}</td>
+                <td><a href=\"#\">Edit</a></td>
+            </tr>
+            ";
+        }
+    }
+    public function getSubInfo($id){
 
-        $ds = DB::table('detail_service')
-            ->join('subservice',
-                'detail_service.sv_id',
-                '=',
-                'subservice.sv_id')
-            ->where('detail_service.sv_id', $id)
-            ->get();
-
-        return response()->json($ds);
-
+        $sub = Subservice::where('sv_id', $id)->get()->toArray();
+        foreach($sub as $item){
+            echo"
+            <tr>
+                <td>{$item['name']}</td>
+                <td>{$item['price']}</td>
+                <td>{$item['description']}</td>
+                <td><a href=\"#\">Edit</a></td>
+            </tr>
+            ";
+        }
     }
 
     public function showEditUser($id)
